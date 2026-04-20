@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEMS v1.1.0 Download | ZGEMMA</title>
+<meta name="description" content="Download HEMS v1.1.0 IPK for Enigma2. Free open-source Home Energy Management System plugin for ZGEMMA receivers.">
+<link rel="stylesheet" href="../style.css">
+<style>
+:root {
+  --green: #34d399;
+  --green2: #10b981;
+  --green3: #059669;
+  --green-glow: rgba(52,211,153,0.12);
+  --green-bg: rgba(52,211,153,0.08);
+}
+.release-wrap { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+.release-badge { display:inline-block; background:var(--green-bg); color:var(--green2); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.35rem 0.9rem; border-radius:20px; border:1px solid rgba(52,211,153,0.2); margin-bottom:1.5rem; }
+.release-wrap h1 { font-family:'Rajdhani',sans-serif; font-size:2.4rem; font-weight:700; margin-bottom:0.5rem; }
+.release-wrap h1 span { color:var(--green2); }
+.release-meta { color:var(--muted); font-size:0.85rem; margin-bottom:2.5rem; }
+.release-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:2rem; margin-bottom:2rem; }
+.release-card h2 { font-family:'Rajdhani',sans-serif; font-size:1.3rem; margin-bottom:1rem; }
+.release-card ul { list-style:none; padding:0; margin:0 0 1.5rem; }
+.release-card li { padding:0.4rem 0; color:var(--muted); font-size:0.9rem; line-height:1.6; }
+.release-card li::before { content:'✓'; color:var(--green2); margin-right:0.6rem; font-weight:700; }
+.dl-btn { display:inline-flex; align-items:center; gap:0.6rem; background:var(--green2); color:#fff; border:none; padding:0.85rem 2rem; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border-radius:var(--r); transition:all 0.2s; }
+.dl-btn:hover { background:var(--green3); transform:translateY(-1px); }
+.dl-btn svg { width:18px; height:18px; fill:currentColor; }
+.dl-size { color:var(--muted); font-size:0.78rem; margin-left:0.5rem; }
+.install-section { margin-top:2.5rem; }
+.install-section h3 { font-family:'Rajdhani',sans-serif; font-size:1.1rem; margin-bottom:1rem; }
+.install-code { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1rem 1.2rem; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--green); line-height:1.8; overflow-x:auto; }
+.install-code .cmd { color:var(--muted); }
+.back-link { display:inline-block; margin-bottom:2rem; color:var(--muted); text-decoration:none; font-size:0.85rem; }
+.back-link:hover { color:var(--green2); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="z-nav">
+  <a href="../index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <div class="z-nav-links">
+    <a href="../products.html">Products</a>
+    <a href="../hems/">HEMS</a>
+    <a href="../downloads.html">Downloads</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="release-wrap">
+  <a href="../hems/" class="back-link">← Back to HEMS</a>
+  <span class="release-badge">Latest Release</span>
+  <h1>HEMS <span>v1.1.0</span></h1>
+  <p class="release-meta">Released 20 April 2025 · Enigma2 Plugin · All ZGEMMA receivers</p>
+
+  <div class="release-card">
+    <h2>What's New</h2>
+    <ul>
+      <li>Matter bridge support — expose devices to Apple Home, Google Home, Alexa</li>
+      <li>Heat pump monitoring (Daikin, Mitsubishi, Vaillant, Bosch and more)</li>
+      <li>30+ brand drivers for solar inverters, batteries, smart plugs, EV chargers</li>
+      <li>Improved non-blocking UI — device errors never freeze the screen</li>
+      <li>100% local processing, no cloud, no subscription</li>
+    </ul>
+
+    <a href="enigma2-plugin-extensions-hems_1.1.0_all.ipk" class="dl-btn">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      Download IPK
+    </a>
+    <span class="dl-size">~26 KB</span>
+  </div>
+
+  <div class="install-section">
+    <h3>Method 1 — USB Install (Easiest)</h3>
+    <div class="install-code">
+      <span class="cmd">1.</span> Download the IPK file above to your computer<br>
+      <span class="cmd">2.</span> Copy it to a USB stick<br>
+      <span class="cmd">3.</span> Plug the USB into your ZGEMMA<br>
+      <span class="cmd">4.</span> On your ZGEMMA go to: <strong style="color:var(--green)">Menu → Plugin Browser → Install from USB</strong><br>
+      <span class="cmd">5.</span> Select the IPK file and confirm<br>
+      <span class="cmd">6.</span> Restart Enigma2 when prompted
+    </div>
+  </div>
+
+  <div class="install-section">
+    <h3>Method 2 — One-Line Install via SSH</h3>
+    <div class="install-code" style="position:relative;">
+      wget -qO /tmp/hems.ipk https://www.zgemma4.com/hems/enigma2-plugin-extensions-hems_1.1.0_all.ipk &amp;&amp; opkg install /tmp/hems.ipk &amp;&amp; systemctl restart enigma2
+      <button onclick="navigator.clipboard.writeText('wget -qO /tmp/hems.ipk https://www.zgemma4.com/hems/enigma2-plugin-extensions-hems_1.1.0_all.ipk && opkg install /tmp/hems.ipk && systemctl restart enigma2')" style="position:absolute;top:0.5rem;right:0.5rem;background:var(--border);border:none;color:var(--muted);padding:0.3rem 0.6rem;border-radius:4px;cursor:pointer;font-size:0.72rem;">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="../index.html" class="z-logo">Z<span>GEMMA</span></a>
+      <p>Professional DVB receivers powered by Enigma2 Linux. Designed in the UK, built for enthusiasts worldwide.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="../products.html">All Products</a></li><li><a href="../hems/">HEMS Plugin</a></li><li><a href="../downloads.html">Downloads</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="../developer.html">Developers</a></li><li><a href="../contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li><li><a href="../contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+</body>
+</html>
