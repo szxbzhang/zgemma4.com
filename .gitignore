@@ -1,2 +1,5 @@
 zgemma-deploy.zip
 .claude/
+.wrangler/
+deploy.sh
+forum-posts/
