@@ -3,3 +3,8 @@ zgemma-deploy.zip
 .wrangler/
 deploy.sh
 forum-posts/
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
