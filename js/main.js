@@ -83,9 +83,6 @@
         revealObserver.observe(el);
     });
 
-    // Add revealed class handler
-    document.addEventListener('animationend', () => {}, { once: true });
-
     // Patch: apply styles directly when revealed
     const style = document.createElement('style');
     style.textContent = '.revealed { opacity: 1 !important; transform: translateY(0) !important; }';
@@ -154,14 +151,6 @@
                     btn.disabled = false;
                 }, 1500);
             }, 800);
-        });
-    });
-
-    // ---- Support / community link feedback ----
-    document.querySelectorAll('.support-link, .community-btn').forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            // In a real deployment these would navigate to actual URLs
         });
     });
 
