@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads & Firmware | ZGEMMA</title>
+<meta name="description" content="Download official Enigma2 firmware images for all ZGEMMA receivers. OpenATV, OpenPLi, OpenViX, OpenBH and more.">
+<link rel="stylesheet" href="style.css">
+<style>
+.z-dl-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); margin-bottom:3rem; }
+.z-dl-card { background:var(--card); padding:2rem; }
+.z-dl-partner { font-family:'Rajdhani',sans-serif; font-size:1.3rem; font-weight:700; letter-spacing:0.04em; margin-bottom:0.4rem; }
+.z-dl-desc { font-size:0.78rem; color:var(--muted); line-height:1.65; font-weight:300; margin-bottom:1.2rem; }
+.z-dl-btn { background:var(--accent); color:#fff; border:none; padding:0.5rem 1.2rem; font-size:0.75rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; border-radius:var(--r); transition:background 0.2s; text-decoration:none; display:inline-block; }
+.z-dl-btn:hover { background:var(--accent2); }
+
+.z-model-table { width:100%; border-collapse:collapse; }
+.z-model-table th { text-align:left; padding:0.7rem 1rem; font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); background:var(--surface); font-weight:500; }
+.z-model-table tr { border-bottom:1px solid var(--border); transition:background 0.15s; }
+.z-model-table tbody tr:hover { background:var(--card2); }
+.z-model-table td { padding:0.75rem 1rem; font-size:0.82rem; }
+.z-model-table td:first-child { font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.04em; font-size:0.9rem; }
+.z-tuner-tag { font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--border); padding:1px 6px; border-radius:2px; }
+.z-fw-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.z-fw-link { font-size:0.68rem; color:var(--accent3); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s; }
+.z-fw-link:hover { color:var(--text); }
+.z-notice { background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent2); padding:1.2rem 1.5rem; border-radius:var(--r); margin-bottom:2rem; }
+.z-notice-title { font-size:0.78rem; font-weight:500; margin-bottom:0.3rem; color:var(--accent3); }
+.z-notice-text { font-size:0.78rem; color:var(--muted); line-height:1.65; font-weight:300; }
+@media(max-width:700px){ .z-dl-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<div class="z-page-header">
+  <div class="z-page-eyebrow">Enigma2 Images</div>
+  <div class="z-page-title">Downloads &amp; Firmware</div>
+</div>
+
+<section class="z-section">
+
+  <div class="z-notice">
+    <div class="z-notice-title">Important Notice</div>
+    <div class="z-notice-text">ZGEMMA supplies all receivers strictly as Free-to-Air (FTA) hardware only. We do not provide receivers pre-loaded with any patches and cannot assist with any non-FTA usage. All firmware images below are provided by independent open-source community teams.</div>
+  </div>
+
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Official Image Providers</div><div class="z-sec-title">Enigma2 Image Partners</div></div>
+  </div>
+
+  <div class="z-dl-grid">
+    <div class="z-dl-card">
+      <div class="z-dl-partner">OpenATV</div>
+      <div class="z-dl-desc">The most widely used Enigma2 image. Stable, well-maintained, and highly recommended for all ZGEMMA devices. Updated regularly with new features and hardware support.</div>
+      <a href="https://images.mynonpublic.com/openatv/current/" target="_blank" class="z-dl-btn">Visit OpenATV →</a>
+    </div>
+    <div class="z-dl-card">
+      <div class="z-dl-partner">OpenPLi</div>
+      <div class="z-dl-desc">Community favourite image with a focus on stability and performance. Large user base with extensive plugin support. Ideal for IPTV and streaming setups.</div>
+      <a href="https://openpli.org/download/zgemma/" target="_blank" class="z-dl-btn">Visit OpenPLi →</a>
+    </div>
+    <div class="z-dl-card">
+      <div class="z-dl-partner">OpenViX</div>
+      <div class="z-dl-desc">Feature-rich Enigma2 image with an active development team. Excellent plugin ecosystem and regular updates for all supported ZGEMMA models.</div>
+      <a href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank" class="z-dl-btn">Visit OpenViX →</a>
+    </div>
+    <div class="z-dl-card">
+      <div class="z-dl-partner">OpenBH (BlackHole)</div>
+      <div class="z-dl-desc">Stable BlackHole-based Enigma2 image. Known for reliability and clean interface. Supported across a wide range of ZGEMMA hardware models.</div>
+      <a href="https://images.openbh.net/" target="_blank" class="z-dl-btn">Visit OpenBH →</a>
+    </div>
+    <div class="z-dl-card">
+      <div class="z-dl-partner">OpenSPA</div>
+      <div class="z-dl-desc">Spanish-developed Enigma2 image with strong European community backing. Feature-complete with good multi-language support.</div>
+      <a href="https://openspa.webhop.info" target="_blank" class="z-dl-btn">Visit OpenSPA →</a>
+    </div>
+    <div class="z-dl-card">
+      <div class="z-dl-partner">Pure-E2</div>
+      <div class="z-dl-desc">Lightweight Enigma2 image focused on performance. Minimal footprint with all essential features. Good choice for experienced users.</div>
+      <a href="http://www.pur-e2.club/OU/images/index.php?dir=6.5/airdigital/" target="_blank" class="z-dl-btn">Visit Pure-E2 →</a>
+    </div>
+  </div>
+
+  <!-- MODEL COMPATIBILITY TABLE -->
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Model Reference</div><div class="z-sec-title">Firmware Compatibility</div></div>
+  </div>
+
+  <table class="z-model-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Tuner</th>
+        <th>Resolution</th>
+        <th>Compatible Images</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>H17 COMBO</td>
+        <td><span class="z-tuner-tag">S2X+T2/C</span></td>
+        <td>4K UHD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a><a class="z-fw-link" href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank">OpenViX</a></div></td>
+      </tr>
+      <tr>
+        <td>H17 TWIN</td>
+        <td><span class="z-tuner-tag">S2X+S2X</span></td>
+        <td>4K UHD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a><a class="z-fw-link" href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank">OpenViX</a></div></td>
+      </tr>
+      <tr>
+        <td>H9 COMBO SE</td>
+        <td><span class="z-tuner-tag">S2X+T2/C</span></td>
+        <td>4K UHD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a><a class="z-fw-link" href="https://images.openbh.net/" target="_blank">OpenBH</a></div></td>
+      </tr>
+      <tr>
+        <td>H9 TWIN SE</td>
+        <td><span class="z-tuner-tag">S2X+S2X</span></td>
+        <td>4K UHD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a></div></td>
+      </tr>
+      <tr>
+        <td>H9 COMBO</td>
+        <td><span class="z-tuner-tag">S2X+T2/C</span></td>
+        <td>4K UHD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a><a class="z-fw-link" href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank">OpenViX</a><a class="z-fw-link" href="https://images.openbh.net/" target="_blank">OpenBH</a></div></td>
+      </tr>
+      <tr>
+        <td>H8.2H PLUS</td>
+        <td><span class="z-tuner-tag">S2+T2/C</span></td>
+        <td>Full HD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a><a class="z-fw-link" href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank">OpenViX</a></div></td>
+      </tr>
+      <tr>
+        <td>H8.2H</td>
+        <td><span class="z-tuner-tag">S2+T2/C</span></td>
+        <td>Full HD</td>
+        <td><div class="z-fw-links"><a class="z-fw-link" href="https://images.mynonpublic.com/openatv/current/" target="_blank">OpenATV</a><a class="z-fw-link" href="https://openpli.org/download/zgemma/" target="_blank">OpenPLi</a></div></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Professional DVB hardware for European broadcast markets.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="product-airbox.html">AIRBOX Y1</a></li><li><a href="product-h17combo.html">H17 COMBO</a></li><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

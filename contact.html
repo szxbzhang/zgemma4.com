@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | ZGEMMA</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.z-contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:1px; background:var(--border); }
+.z-contact-info { background:var(--surface); padding:3rem; }
+.z-contact-form-wrap { background:var(--card); padding:3rem; }
+.z-info-block { margin-bottom:2.5rem; }
+.z-info-label { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent3); margin-bottom:0.6rem; }
+.z-info-val { font-size:0.88rem; line-height:1.7; color:var(--text); }
+.z-info-val a { color:var(--accent3); transition:color 0.2s; }
+.z-info-val a:hover { color:var(--text); }
+.z-info-divider { border:none; border-top:1px solid var(--border); margin:2rem 0; }
+
+/* FORM */
+.z-form-title { font-family:'Rajdhani',sans-serif; font-size:1.5rem; font-weight:700; letter-spacing:0.03em; margin-bottom:0.4rem; }
+.z-form-sub { font-size:0.78rem; color:var(--muted); margin-bottom:2rem; font-weight:300; line-height:1.65; }
+.z-field { margin-bottom:1.2rem; }
+.z-field label { display:block; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.4rem; }
+.z-field input, .z-field select, .z-field textarea {
+  width:100%; background:var(--surface); border:1px solid var(--border);
+  color:var(--text); padding:0.7rem 0.9rem; font-family:'Inter',sans-serif;
+  font-size:0.85rem; border-radius:var(--r); outline:none;
+  transition:border-color 0.2s; -webkit-appearance:none;
+}
+.z-field input:focus, .z-field select:focus, .z-field textarea:focus { border-color:var(--accent2); }
+.z-field textarea { resize:vertical; min-height:130px; line-height:1.6; }
+.z-field select option { background:var(--card); }
+.z-field-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.z-form-submit {
+  width:100%; background:var(--accent); color:#fff; border:none;
+  padding:0.85rem; font-family:'Inter',sans-serif; font-size:0.85rem;
+  font-weight:500; letter-spacing:0.06em; text-transform:uppercase;
+  cursor:pointer; border-radius:var(--r); transition:background 0.2s; margin-top:0.5rem;
+}
+.z-form-submit:hover { background:var(--accent2); }
+.z-form-notice { font-size:0.7rem; color:var(--dim); margin-top:0.8rem; line-height:1.6; }
+.z-success-msg { display:none; background:rgba(37,99,235,0.12); border:1px solid rgba(96,165,250,0.3); border-radius:var(--r); padding:1.2rem 1.5rem; margin-top:1rem; }
+.z-success-msg p { font-size:0.85rem; color:var(--accent3); }
+
+/* TRADE CHANNELS */
+.z-trade-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); margin-top:3rem; }
+.z-trade-card { background:var(--card); padding:1.8rem; transition:background 0.2s; }
+.z-trade-card:hover { background:var(--card2); }
+.z-trade-name { font-family:'Rajdhani',sans-serif; font-size:1.1rem; font-weight:700; letter-spacing:0.04em; margin-bottom:0.4rem; }
+.z-trade-desc { font-size:0.75rem; color:var(--muted); line-height:1.6; margin-bottom:1rem; font-weight:300; }
+.z-trade-link { font-size:0.72rem; color:var(--accent3); letter-spacing:0.06em; transition:color 0.2s; text-decoration:none; }
+.z-trade-link:hover { color:var(--text); }
+
+@media(max-width:900px){ .z-contact-grid{ grid-template-columns:1fr; } .z-field-row{ grid-template-columns:1fr; } .z-trade-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<div class="z-page-header">
+  <div class="z-page-eyebrow">Get In Touch</div>
+  <div class="z-page-title">Contact Us</div>
+</div>
+
+<section class="z-section">
+  <div class="z-contact-grid">
+
+    <!-- INFO COLUMN -->
+    <div class="z-contact-info">
+      <div class="z-info-block">
+        <div class="z-info-label">Company</div>
+        <div class="z-info-val">
+          Shenzhen Air Digital Technology Co., Ltd<br>
+          Gemma Technology (Shenzhen) Co., Ltd
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">Email</div>
+        <div class="z-info-val">
+          <a href="mailto:info@zgemma.org">info@zgemma.org</a><br>
+          <a href="mailto:sales@zgemma.org">sales@zgemma.org</a><br>
+          <a href="mailto:support@zgemma.org">support@zgemma.org</a><br>
+          <a href="mailto:zgemma@zgemma.org">zgemma@zgemma.org</a>
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">Phone</div>
+        <div class="z-info-val">
+          Tel: +86-755-81735856<br>
+          Mobile: +86-13664988560<br>
+          Fax: +86-755-81728714
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">WhatsApp</div>
+        <div class="z-info-val">
+          <a href="https://wa.me/447587736228" target="_blank">+44 7587 736228</a><br>
+          <a href="https://wa.me/447742003576" target="_blank">+44 7742 003576</a>
+        </div>
+      </div>
+      <hr class="z-info-divider">
+      <div class="z-info-block">
+        <div class="z-info-label">Contact Person</div>
+        <div class="z-info-val">
+          <strong>Robert</strong><br>
+          <a href="mailto:szxbzhang@gmail.com">szxbzhang@gmail.com</a><br>
+          WhatsApp: <a href="https://wa.me/447742003576" target="_blank">+44 7742 003576</a><br><br>
+          <strong>Yanmei</strong><br>
+          <a href="mailto:yanmei@zgemma.org">yanmei@zgemma.org</a><br>
+          WhatsApp: <a href="https://wa.me/447587736228" target="_blank">+44 7587 736228</a>
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">Shenzhen Office</div>
+        <div class="z-info-val">
+          North 6/F, Building 2, Block B<br>
+          Shanghe Industrial Park<br>
+          Nanchang Street, Baoan District<br>
+          Shenzhen, China
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">Hong Kong Office</div>
+        <div class="z-info-val">
+          Flat/Rm 902A, 9/F<br>
+          Richmond Commercial Building<br>
+          111 Argyle Street, Mong Kok, KL
+        </div>
+      </div>
+      <hr class="z-info-divider">
+      <div class="z-info-block">
+        <div class="z-info-label">Wholesale &amp; Trade</div>
+        <div class="z-info-val">For bulk orders and distribution enquiries, please use the enquiry form or contact us via Alibaba.<br><br>
+          <a href="https://airsat.en.alibaba.com" target="_blank">airsat.en.alibaba.com →</a>
+        </div>
+      </div>
+      <div class="z-info-block">
+        <div class="z-info-label">Consumer Support</div>
+        <div class="z-info-val">
+          We provide support for ZGEMMA hardware and FTA reception only. For Enigma2 image support, please visit the relevant community forum.<br><br>
+          We do not provide support for patches, CAM, or IPTV configurations.
+        </div>
+      </div>
+      <hr class="z-info-divider">
+      <div class="z-info-block">
+        <div class="z-info-label">Response Time</div>
+        <div class="z-info-val">We aim to respond to all enquiries within 2 business days (Mon–Fri, China time).</div>
+      </div>
+    </div>
+
+    <!-- FORM COLUMN -->
+    <div class="z-contact-form-wrap">
+      <div class="z-form-title">Send an Enquiry</div>
+      <div class="z-form-sub">For product questions, wholesale pricing, or trade enquiries. All fields marked * are required.</div>
+
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="z-field-row">
+          <div class="z-field">
+            <label>First Name *</label>
+            <input type="text" name="firstname" required placeholder="John">
+          </div>
+          <div class="z-field">
+            <label>Last Name *</label>
+            <input type="text" name="lastname" required placeholder="Smith">
+          </div>
+        </div>
+        <div class="z-field">
+          <label>Email Address *</label>
+          <input type="email" name="email" required placeholder="john@company.com">
+        </div>
+        <div class="z-field">
+          <label>Company / Organisation</label>
+          <input type="text" name="company" placeholder="Your company name">
+        </div>
+        <div class="z-field">
+          <label>Country *</label>
+          <select name="country" required>
+            <option value="">Select country...</option>
+            <option>United Kingdom</option>
+            <option>Germany</option>
+            <option>France</option>
+            <option>Italy</option>
+            <option>Spain</option>
+            <option>Netherlands</option>
+            <option>Belgium</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Sweden</option>
+            <option>Norway</option>
+            <option>Denmark</option>
+            <option>Finland</option>
+            <option>Austria</option>
+            <option>Switzerland</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="z-field">
+          <label>Enquiry Type *</label>
+          <select name="enquiry_type" required>
+            <option value="">Select type...</option>
+            <option>Wholesale / Bulk Order</option>
+            <option>Distribution Partnership</option>
+            <option>Product Information</option>
+            <option>Technical Support (Hardware)</option>
+            <option>Amazon / Retail</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="z-field">
+          <label>Product(s) of Interest</label>
+          <select name="product">
+            <option value="">Select product...</option>
+            <option>AIRBOX Y1</option>
+            <option>H17 COMBO</option>
+            <option>H17 TWIN</option>
+            <option>H9 Series</option>
+            <option>H8 Series</option>
+            <option>Multiple / Full Range</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="z-field">
+          <label>Message *</label>
+          <textarea name="message" required placeholder="Please describe your enquiry in detail. For wholesale enquiries, please include estimated quantity and delivery country."></textarea>
+        </div>
+        <button type="submit" class="z-form-submit">Send Enquiry →</button>
+        <p class="z-form-notice">By submitting this form you agree to be contacted by Zgemma / Air Digital Technology regarding your enquiry. We do not share your data with third parties.</p>
+      </form>
+
+      <div class="z-success-msg" id="successMsg">
+        <p>✓ &nbsp;Thank you for your enquiry. We will get back to you within 2 business days.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TRADE CHANNELS -->
+  <div class="z-sec-head" style="margin-top:3rem;">
+    <div><div class="z-sec-label">Where to Buy</div><div class="z-sec-title">Trade Channels</div></div>
+  </div>
+  <div class="z-trade-grid">
+    <div class="z-trade-card">
+      <div class="z-trade-name">Amazon EU</div>
+      <div class="z-trade-desc">Official ZGEMMA storefronts on Amazon Italy, Germany, France and Spain. Fast delivery across Europe.</div>
+      <a href="https://www.amazon.de/stores/ZGEMMA/page/BFFD4BCB-DE1E-40EE-87D9-837C376D360B" target="_blank" class="z-trade-link">amazon.de/zgemma →</a>
+    </div>
+    <div class="z-trade-card">
+      <div class="z-trade-name">Alibaba (B2B)</div>
+      <div class="z-trade-desc">For wholesale and trade buyers. Minimum order quantities apply. Request a quote directly on our Alibaba storefront.</div>
+      <a href="https://airsat.en.alibaba.com" target="_blank" class="z-trade-link">airsat.en.alibaba.com →</a>
+    </div>
+    <div class="z-trade-card">
+      <div class="z-trade-name">AliExpress</div>
+      <div class="z-trade-desc">Single-unit sales with worldwide shipping. Official ZGEMMA shop on AliExpress with buyer protection.</div>
+      <a href="http://zgemmashop.aliexpress.com" target="_blank" class="z-trade-link">zgemmashop.aliexpress.com →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Professional DVB hardware for European broadcast markets.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="product-airbox.html">AIRBOX Y1</a></li><li><a href="product-h17combo.html">H17 COMBO</a></li><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const btn = form.querySelector('.z-form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  // In production: replace with your form backend (Formspree, Netlify Forms, etc.)
+  // Example with Formspree: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
+  setTimeout(() => {
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }, 800);
+}
+</script>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZGEMMA AI Energy System | Complete HEMS Product Line</title>
+<meta name="description" content="Complete AI Energy product line: AI Box, HEMS Box, AI Edge, AI Agent Box, Smart Plugs, Router. Professional energy management for European market.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://app.snipcart.com">
+<link rel="preconnect" href="https://cdn.snipcart.com">
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.3/default/snipcart.css"/>
+<style>
+/* ── AI ENERGY PRODUCTS MAIN STYLES ── */
+.zae-hero {
+  padding: 5rem 3rem 3rem;
+  background: linear-gradient(135deg, #0a1929 0%, #1e293b 100%);
+  border-bottom: 1px solid rgba(16,185,129,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.zae-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(16,185,129,0.08) 0%, transparent 50%);
+}
+.zae-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.zae-hero h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffffff 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.zae-hero-subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.zae-product-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(148,163,184,0.2);
+}
+.zae-nav-link {
+  padding: 0.5rem 1.2rem;
+  background: rgba(16,185,129,0.1);
+  color: #34d399;
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.zae-nav-link:hover {
+  background: rgba(52,211,153,0.2);
+  transform: translateY(-1px);
+}
+.zae-nav-link.active {
+  background: #34d399;
+  color: #0f172a;
+  border-color: #34d399;
+}
+
+/* ── PRODUCT GRID ── */
+.zae-products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.zae-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.zae-product-card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.zae-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(52,211,153,0.5);
+}
+.zae-product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16,185,129,0.2);
+  color: #34d399;
+  border: 1px solid rgba(52,211,153,0.4);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+.zae-product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #34d399;
+  font-size: 3rem;
+  padding: 2rem;
+}
+.zae-product-content {
+  padding: 1.5rem;
+}
+.zae-product-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16,185,129,0.1);
+  color: #34d399;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+.zae-product-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+.zae-product-desc {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.zae-product-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.zae-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.zae-spec-item svg {
+  width: 16px;
+  height: 16px;
+  color: #34d399;
+  flex-shrink: 0;
+}
+.zae-product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.zae-product-price {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.zae-product-price-note {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--dim);
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+.zae-product-btn {
+  padding: 0.6rem 1.2rem;
+  background: rgba(16,185,129,0.1);
+  color: #34d399;
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.zae-product-btn:hover {
+  background: rgba(52,211,153,0.2);
+  transform: translateY(-1px);
+}
+.zae-product-btn.primary {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+.zae-product-btn.primary:hover {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+/* ── SYSTEM ARCHITECTURE ── */
+.zae-architecture {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+}
+.zae-arch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.zae-arch-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text);
+}
+.zae-arch-diagram {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+.zae-arch-diagram::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #34d399, transparent);
+  z-index: 1;
+}
+.zae-arch-node {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s;
+}
+.zae-arch-node:hover {
+  border-color: #34d399;
+  transform: translateY(-2px);
+}
+.zae-arch-node.core {
+  border-color: #059669;
+  background: rgba(5,150,105,0.05);
+}
+.zae-arch-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #34d399;
+  font-size: 1.5rem;
+}
+.zae-arch-node.core .zae-arch-icon {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+}
+.zae-arch-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.zae-arch-role {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── COMPARISON TABLE ── */
+.zae-comparison {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.zae-comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.zae-comp-table th {
+  background: var(--surface);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.zae-comp-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.zae-comp-table tr:last-child td {
+  border-bottom: none;
+}
+.zae-comp-table .feature {
+  background: var(--surface);
+  font-weight: 600;
+  color: var(--text);
+  width: 200px;
+}
+.zae-comp-yes {
+  color: #10b981;
+  font-weight: 600;
+}
+.zae-comp-no {
+  color: var(--dim);
+  opacity: 0.5;
+}
+.zae-comp-partial {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  .zae-hero {
+    padding: 3rem 1.5rem 2rem;
+  }
+  .zae-product-grid {
+    grid-template-columns: 1fr;
+  }
+  .zae-arch-diagram {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .zae-arch-diagram::before {
+    display: none;
+  }
+  .zae-product-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+  }
+  .zae-comp-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<!-- AI ENERGY PRODUCTS HERO -->
+<section class="zae-hero">
+  <div class="zae-hero-content">
+    <h1>AI Energy System</h1>
+    <p class="zae-hero-subtitle">Complete product ecosystem for intelligent energy management. From edge computing to cloud orchestration, our solutions enable real-time optimization, predictive analytics, and automated control for residential, commercial, and industrial applications.</p>
+    
+    <div class="zae-product-nav">
+      <a href="#router" class="zae-nav-link">Energy Router</a>
+      <a href="#smart-plug" class="zae-nav-link">Smart Plug Pro</a>
+      <a href="#ai-box" class="zae-nav-link">AI Box</a>
+      <a href="#hems-box" class="zae-nav-link">HEMS Box</a>
+      <a href="#ai-edge" class="zae-nav-link">AI Edge</a>
+      <a href="#ai-agent" class="zae-nav-link">AI Agent Box</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="zae-products">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Product Line</div><div class="z-sec-title">Complete AI Energy Ecosystem</div></div>
+  </div>
+
+  <div class="zae-product-grid">
+    <!-- ENERGY ROUTER -->
+    <div class="zae-product-card" id="router">
+      <div class="zae-product-badge">Available Now</div>
+      <div class="zae-product-image">📶</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">Network Infrastructure</span>
+        <h3 class="zae-product-title">Energy Router Pro</h3>
+        <p class="zae-product-desc">Dual-WAN industrial router with energy-aware traffic shaping. Prioritizes essential services during grid stress, supports failover to LTE backup, and provides detailed per-device energy consumption monitoring.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="2.5"/>
+              <path d="M8 12h8"/>
+              <path d="M12 16V8"/>
+            </svg>
+            <span>Dual-WAN Load Balance</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>Energy Priority QoS</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            <span>LTE Failover</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>PoE+ Ports</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€249.00</div>
+            <span class="zae-product-price-note">B2B pricing available</span>
+          </div>
+          <a href="product-energy-router.html" class="zae-product-btn">View Details →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMART PLUG PRO -->
+    <div class="zae-product-card" id="smart-plug">
+      <div class="zae-product-badge">In Stock</div>
+      <div class="zae-product-image">🔌</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">Monitoring & Control</span>
+        <h3 class="zae-product-title">Smart Plug Pro</h3>
+        <p class="zae-product-desc">Zigbee 3.0 smart plug with high-precision energy monitoring (0.1W resolution), overload protection, and scheduled automation. Designed for European Type E/F sockets with child safety shutters.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="7"/>
+              <path d="m15 9-6 6"/>
+              <path d="m9 9 6 6"/>
+            </svg>
+            <span>Zigbee 3.0</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
+            </svg>
+            <span>16A Max Load</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>0.1W Precision</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>Overload Protect</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€29.90</div>
+            <span class="zae-product-price-note">Pack of 3: €79.00</span>
+          </div>
+          <button class="snipcart-add-item zae-product-btn primary"
+            data-item-id="smart-plug-pro"
+            data-item-price="29.90"
+            data-item-name="Smart Plug Pro"
+            data-item-description="Zigbee 3.0 smart plug with energy monitoring"
+            data-item-image="https://zgemma.org/images/smart-plug-pro.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI BOX -->
+    <div class="zae-product-card" id="ai-box">
+      <div class="zae-product-badge">Coming Soon</div>
+      <div class="zae-product-image">🤖</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">AI Inference</span>
+        <h3 class="zae-product-title">AI Box</h3>
+        <p class="zae-product-desc">Local AI inference appliance with NPU for real-time energy pattern recognition. Runs TensorFlow Lite models for anomaly detection, load forecasting, and optimization without cloud dependency.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>Rockchip RK3588</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 22v-4M19.07 19.07l-2.83-2.83M22 12h-4M19.07 4.93l-2.83 2.83"/>
+            </svg>
+            <span>6 TOPS NPU</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+            <span>8GB RAM</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>TensorFlow Lite</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€399.00</div>
+            <span class="zae-product-price-note">Pre-order available</span>
+          </div>
+          <a href="contact.html?product=ai-box" class="zae-product-btn">Pre-order Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEMS BOX -->
+    <div class="zae-product-card" id="hems-box">
+      <div class="zae-product-badge">Available Now</div>
+      <div class="zae-product-image">🏠</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">Energy Management</span>
+        <h3 class="zae-product-title">HEMS Box</h3>
+        <p class="zae-product-desc">Multi-protocol Home Energy Management System gateway. Integrates Zigbee, Modbus RTU, SunSpec, and OCPP for comprehensive monitoring and control of solar, storage, EV, and grid interactions.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12h8"/>
+            </svg>
+            <span>Amlogic S905Y4</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M12 6v12"/>
+            </svg>
+            <span>4 Protocol Support</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 22v-4M19.07 19.07l-2.83-2.83M22 12h-4M19.07 4.93l-2.83 2.83"/>
+            </svg>
+            <span>Local Processing</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <path d="M6 1v3M10 1v3M14 1v3"/>
+            </svg>
+            <span>EU Market Ready</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€299.00</div>
+            <span class="zae-product-price-note">Volume pricing available</span>
+          </div>
+          <button class="snipcart-add-item zae-product-btn primary"
+            data-item-id="hems-box"
+            data-item-price="299.00"
+            data-item-name="HEMS Box"
+            data-item-description="Multi-protocol Home Energy Management System"
+            data-item-image="https://zgemma.org/images/hems-box.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI EDGE -->
+    <div class="zae-product-card" id="ai-edge">
+      <div class="zae-product-badge">Q2 2025</div>
+      <div class="zae-product-image">🔍</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">Edge Computing</span>
+        <h3 class="zae-product-title">AI Edge</h3>
+        <p class="zae-product-desc">Ruggedized edge computing unit for harsh environments. Fanless design, wide temperature range (-20°C to 70°C), and IP65 rating. Ideal for substation monitoring, industrial sites, and outdoor energy installations.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="8" width="18" height="13" rx="2"/>
+              <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+            </svg>
+            <span>Industrial Grade</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 22v-4M19.07 19.07l-2.83-2.83M22 12h-4M19.07 4.93l-2.83 2.83"/>
+            </svg>
+            <span>IP65 Enclosure</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 4c0-1.1.9-2 2-2M20 10c1.1 0 2-.9 2-2M22 16c0 1.1-.9 2-2 2M16 20c-1.1 0-2 .9-2 2M8 20c-1.1 0-2 .9-2 2M4 16c-1.1 0-2 .9-2 2M2 8c0-1.1.9-2 2-2M8 4c0-1.1.9-2 2-2"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <span>DIN Rail Mount</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 9v2m0 4v2m9-9a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+            <span>Wide Temp Range</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€599.00</div>
+            <span class="zae-product-price-note">Industrial pricing</span>
+          </div>
+          <a href="contact.html?product=ai-edge" class="zae-product-btn">Request Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI AGENT BOX -->
+    <div class="zae-product-card" id="ai-agent">
+      <div class="zae-product-badge">Development Kit</div>
+      <div class="zae-product-image">🧠</div>
+      <div class="zae-product-content">
+        <span class="zae-product-category">Autonomous Agents</span>
+        <h3 class="zae-product-title">AI Agent Box</h3>
+        <p class="zae-product-desc">Local LLM appliance for autonomous energy management agents. Runs fine-tuned models for conversational interfaces, automated optimization decisions, and natural language reporting.</p>
+        
+        <div class="zae-product-specs">
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 9h6v6H9z"/>
+            </svg>
+            <span>NVIDIA Jetson</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 22v-4M19.07 19.07l-2.83-2.83M22 12h-4M19.07 4.93l-2.83 2.83"/>
+            </svg>
+            <span>32GB RAM</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+            <span>Local LLM 7B</span>
+          </div>
+          <div class="zae-spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>Voice Interface</span>
+          </div>
+        </div>
+        
+        <div class="zae-product-footer">
+          <div>
+            <div class="zae-product-price">€899.00</div>
+            <span class="zae-product-price-note">Developer Edition</span>
+          </div>
+          <a href="developer.html#ai-agent" class="zae-product-btn">Developer Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM ARCHITECTURE -->
+<section class="zae-architecture">
+  <div class="zae-arch-container">
+    <h2 class="zae-arch-title">System Architecture</h2>
+    <div class="zae-arch-diagram">
+      <div class="zae-arch-node">
+        <div class="zae-arch-icon">🔌</div>
+        <div class="zae-arch-name">Smart Plug Pro</div>
+        <div class="zae-arch-role">Edge Monitoring & Control</div>
+      </div>
+      <div class="zae-arch-node">
+        <div class="zae-arch-icon">📶</div>
+        <div class="zae-arch-name">Energy Router</div>
+        <div class="zae-arch-role">Network Backbone</div>
+      </div>
+      <div class="zae-arch-node core">
+        <div class="zae-arch-icon">🏠</div>
+        <div class="zae-arch-name">HEMS Box</div>
+        <div class="zae-arch-role">Protocol Gateway</div>
+      </div>
+      <div class="zae-arch-node">
+        <div class="zae-arch-icon">🤖</div>
+        <div class="zae-arch-name">AI Box</div>
+        <div class="zae-arch-role">Inference Engine</div>
+      </div>
+      <div class="zae-arch-node">
+        <div class="zae-arch-icon">🧠</div>
+        <div class="zae-arch-name">AI Agent Box</div>
+        <div class="zae-arch-role">Autonomous Control</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="zae-comparison">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Technical Specifications</div><div class="z-sec-title">Product Comparison</div></div>
+  </div>
+  
+  <table class="zae-comp-table">
+    <thead>
+      <tr>
+        <th>Feature / Product</th>
+        <th>Smart Plug Pro</th>
+        <th>HEMS Box</th>
+        <th>AI Box</th>
+        <th>AI Edge</th>
+        <th>AI Agent Box</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature">Processor</td>
+        <td>ESP32-C3</td>
+        <td>Amlogic S905Y4</td>
+        <td>Rockchip RK3588</td>
+        <td>NXP i.MX8M Plus</td>
+        <td>NVIDIA Jetson</td>
+      </tr>
+      <tr>
+        <td class="feature">AI Capability</td>
+        <td class="zae-comp-no">None</td>
+        <td class="zae-comp-no">None</td>
+        <td class="zae-comp-yes">6 TOPS NPU</td>
+        <td class="zae-comp-partial">2.3 TOPS NPU</td>
+        <td class="zae-comp-yes">275 TOPS</td>
+      </tr>
+      <tr>
+        <td class="feature">Protocol Support</td>
+        <td>Zigbee 3.0</td>
+        <td>Zigbee, Modbus, SunSpec, OCPP</td>
+        <td>Modbus, REST API</td>
+        <td>Modbus, PROFINET, EtherCAT</td>
+        <td>REST, MQTT, WebSocket</td>
+      </tr>
+      <tr>
+        <td class="feature">Memory</td>
+        <td>4MB Flash</td>
+        <td>2-4GB RAM</td>
+        <td>8GB RAM</td>
+        <td>4GB RAM</td>
+        <td>32GB RAM</td>
+      </tr>
+      <tr>
+        <td class="feature">Storage</td>
+        <td>None</td>
+        <td>16-32GB eMMC</td>
+        <td>128GB NVMe</td>
+        <td>64GB eMMC</td>
+        <td>1TB NVMe</td>
+      </tr>
+      <tr>
+        <td class="feature">Operating Temp</td>
+        <td>0°C to 40°C</td>
+        <td>0°C to 50°C</td>
+        <td>0°C to 50°C</td>
+        <td>-20°C to 70°C</td>
+        <td>0°C to 50°C</td>
+      </tr>
+      <tr>
+        <td class="feature">Power Consumption</td>
+        <td>&lt;2W</td>
+        <td>&lt;8W</td>
+        <td>&lt;15W</td>
+        <td>&lt;12W</td>
+        <td>&lt;45W</td>
+      </tr>
+      <tr>
+        <td class="feature">Target Market</td>
+        <td>Residential</td>
+        <td>Residential/Commercial</td>
+        <td>SMB/Commercial</td>
+        <td>Industrial/Utility</td>
+        <td>Enterprise/Developer</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CALL TO ACTION -->
+<div class="ze-enquiry">
+  <div class="ze-enquiry-text">
+    <h3>Need a Complete Energy Solution?</h3>
+    <p>Our AI Energy System products can be deployed individually or as an integrated stack. Contact our solutions team for architecture consultation, pilot programs, and volume pricing across Europe.</p>
+  </div>
+  <div class="ze-enquiry-btns">
+    <a href="contact.html?topic=energy-system" class="ze-btn-green">Request Architecture Consultation</a>
+    <a href="downloads.html#energy-whitepaper" class="z-btn-ghost">Download Whitepaper</a>
+  </div>
+</div>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Gemma Technology (Shenzhen) Co., Ltd<br><br>Professional hardware for European markets.<br>DVB receivers · HEMS Gateways · AI Energy Systems.</p>
+    </div>
+    <div class="z-flinks"><h4>AI Energy Products</h4><ul>
+      <li><a href="products-ai-energy-system.html" style="color:var(--accent3)">AI Energy System ↗</a></li>
+      <li><a href="product-ai-energy.html">AI-Energy Box</a></li>
+      <li><a href="#router">Energy Router</a></li>
+      <li><a href="#smart-plug">Smart Plug Pro</a></li>
+      <li><a href="#ai-box">AI Box</a></li>
+      <li><a href="#hems-box">HEMS Box</a></li>
+      <li><a href="#ai-edge">AI Edge</a></li>
+      <li><a href="#ai-agent">AI Agent Box</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Company</h4><ul>
+      <li><a href="news.html">News</a></li>
+      <li><a href="developer.html">Developers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul>
+      <li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li>
+      <li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li>
+      <li><a href="contact.html">Wholesale Enquiry</a></li>
+    </ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology · Shenzhen, China</span>
+    <span class="z-fta-notice">CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>window.SnipcartSettings={publicApiKey:"N2U1ZDdkZWMtOTMzMi00OGE2LWEyY2ItYjkxOTA0YzNmOTZhNjM5MTE3MzQ5NjIzNTU2MTA9",currency:"eur"};</script>
+<div hidden id="snipcart" data-api-key="N2U1ZDdkZWMtOTNzMi00OGE2LWEyY2ItYjkxOTA0YzNmOTZhNjM5MTE3MzQ5NjIzNTU2MTA9" data-currency="eur"></div>
+<script async src="https://cdn.snipcart.com/themes/v3.7.3/default/snipcart.js"></script>
+</body>
+</html>

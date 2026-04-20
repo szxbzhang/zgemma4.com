@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News | ZGEMMA</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.z-news-list { display:flex; flex-direction:column; gap:1px; background:var(--border); }
+.z-news-item { background:var(--card); display:grid; grid-template-columns:140px 1fr; gap:0; transition:background 0.2s; }
+.z-news-item:hover { background:var(--card2); }
+.z-news-date-col { padding:2rem; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:flex-start; }
+.z-news-year { font-family:'Rajdhani',sans-serif; font-size:1.5rem; font-weight:700; color:var(--accent3); line-height:1; }
+.z-news-day { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-top:0.2rem; }
+.z-news-body { padding:2rem; }
+.z-news-tag { display:inline-block; font-size:0.58rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent3); background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.25); padding:2px 8px; border-radius:2px; margin-bottom:0.7rem; }
+.z-news-title { font-family:'Rajdhani',sans-serif; font-size:1.3rem; font-weight:700; letter-spacing:0.02em; margin-bottom:0.5rem; line-height:1.2; }
+.z-news-text { font-size:0.82rem; color:var(--muted); line-height:1.7; font-weight:300; }
+@media(max-width:600px){ .z-news-item{ grid-template-columns:1fr; } .z-news-date-col{ border-right:none; border-bottom:1px solid var(--border); padding:1rem 1.5rem; flex-direction:row; align-items:center; gap:0.5rem; } }
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<div class="z-page-header">
+  <div class="z-page-eyebrow">Updates &amp; Releases</div>
+  <div class="z-page-title">News</div>
+</div>
+
+<section class="z-section">
+  <div class="z-news-list">
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2024</div><div class="z-news-day">Dec 10</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">New Product</span>
+        <div class="z-news-title">ZGEMMA AIRBOX Y1 — Android TV Box Now Available</div>
+        <div class="z-news-text">We are pleased to announce the launch of the AIRBOX Y1, our first Android TV certified streaming box. Featuring 4K HDR, Google Assistant, built-in Chromecast and WiFi, the AIRBOX Y1 is now available on Amazon EU storefronts. This marks Zgemma's expansion into the Android TV ecosystem alongside our established Enigma2 Linux lineup.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2022</div><div class="z-news-day">May 18</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">New Products</span>
+        <div class="z-news-title">H9TWIN SE, H11S and H8.2H Now Online</div>
+        <div class="z-news-text">Three new models are now available: the ZGEMMA H9TWIN SE with dual DVB-S2X tuners, the H11S satellite-only 4K receiver, and the H8.2H hybrid receiver. All three are available through Amazon EU and our AliExpress store. Firmware images are available via OpenATV, OpenPLi and OpenViX.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2019</div><div class="z-news-day">Nov 1</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">Product Launch</span>
+        <div class="z-news-title">H10 Series — Linux &amp; Android Dual System</div>
+        <div class="z-news-text">The ZGEMMA H10 COMBO, H10.2H and H10.2S are now available. These models feature a unique dual-boot system supporting both Enigma2 Linux and Android TV, giving users maximum flexibility. Full details at zgemma.org.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2019</div><div class="z-news-day">Jan 23</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">Product Launch</span>
+        <div class="z-news-title">H9 COMBO — S2X + T2/C 4K UHD with CI+ Released</div>
+        <div class="z-news-text">The ZGEMMA H9 COMBO is now available. Key specs include DVB-S2X + T2/C hybrid tuners, 4K UHD output, CI+ slot, CA reader, 300MHz built-in WiFi, SATA HDD bay and 8GB EMMC flash. The H9 TWIN with dual DVB-S2X tuners is also now available.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2018</div><div class="z-news-day">Feb 26</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">Product Launch</span>
+        <div class="z-news-title">ZGEMMA H9S, H9T and H9S Plus Released</div>
+        <div class="z-news-text">The H9 satellite series is now available. The H9S features DVB-S2X with 4K UHD, while the H9S Plus adds additional storage. The H9T offers DVB-T2/C terrestrial and cable reception. All models run Enigma2 Linux.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2018</div><div class="z-news-day">Jan 12</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">Trade Show</span>
+        <div class="z-news-title">Air Digital at CSTB 2018, Moscow</div>
+        <div class="z-news-text">Air Digital attended CSTB 2018 in Moscow from 30 January to 1 February at stand CH2. CSTB is one of the leading broadcast and media technology exhibitions in Eastern Europe and Russia.</div>
+      </div>
+    </div>
+
+    <div class="z-news-item">
+      <div class="z-news-date-col"><div class="z-news-year">2015</div><div class="z-news-day">Dec 10</div></div>
+      <div class="z-news-body">
+        <span class="z-news-tag">Policy</span>
+        <div class="z-news-title">FTA Policy Statement</div>
+        <div class="z-news-text">ZGEMMA supplies all receivers strictly as Free-to-Air (FTA) hardware only. We do not provide receivers pre-loaded with any patches and cannot assist with any non-FTA usage. Support is provided for ZGEMMA hardware and FTA reception only.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Professional DVB hardware for European broadcast markets.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="product-airbox.html">AIRBOX Y1</a></li><li><a href="product-h17combo.html">H17 COMBO</a></li><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

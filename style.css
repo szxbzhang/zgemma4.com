@@ -1,0 +1,197 @@
+/* ============================================================
+   ZGEMMA WEBSITE — SHARED STYLESHEET
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #ffffff;
+  --surface: #f0f4f8;
+  --card:    #e8edf5;
+  --card2:   #dde4f0;
+  --border:  #c0cfe0;
+  --accent:  #2563eb;
+  --accent2: #3b82f6;
+  --accent3: #1d4ed8;
+  --glow:    rgba(37,99,235,0.08);
+  --text:    #0f1c2e;
+  --muted:   #4a6080;
+  --dim:     #c8d8e8;
+  --r:       4px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+.z-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+.z-logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+}
+.z-logo span { color: var(--accent2); }
+.z-navlinks { display: flex; gap: 2rem; list-style: none; }
+.z-navlinks a {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.z-navlinks a:hover, .z-navlinks a.active { color: var(--text); }
+.z-nav-cta {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--r);
+  transition: background 0.2s;
+}
+.z-nav-cta:hover { background: var(--accent2); }
+
+/* ── PAGE HEADER ── */
+.z-page-header {
+  padding: 4rem 3rem 3rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.z-page-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent3);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.z-page-eyebrow::before { content:''; display:block; width:20px; height:1px; background:var(--accent3); }
+.z-page-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ── SECTION ── */
+.z-section { padding: 4rem 3rem; }
+.z-section-border { border-top: 1px solid var(--border); }
+.z-sec-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; }
+.z-sec-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent3); margin-bottom: 0.4rem; }
+.z-sec-title { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; }
+.z-see-all { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--dim); padding-bottom: 2px; cursor: pointer; transition: color 0.2s; }
+.z-see-all:hover { color: var(--text); }
+
+/* ── BUTTONS ── */
+.z-btn-primary {
+  background: var(--accent); color: #fff; border: none;
+  padding: 0.75rem 1.8rem; font-family: 'Inter', sans-serif;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; border-radius: var(--r);
+  transition: all 0.2s; display: inline-block;
+}
+.z-btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+.z-btn-ghost {
+  background: transparent; color: var(--text); border: 1px solid var(--border);
+  padding: 0.75rem 1.8rem; font-family: 'Inter', sans-serif;
+  font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; border-radius: var(--r);
+  transition: all 0.2s; display: inline-block;
+}
+.z-btn-ghost:hover { border-color: var(--muted); background: var(--glow); }
+
+/* ── BADGE ── */
+.z-badge {
+  display: inline-block; font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent3);
+  background: rgba(37,99,235,0.14); border: 1px solid rgba(96,165,250,0.25);
+  padding: 2px 9px; border-radius: 2px; margin-bottom: 0.9rem;
+}
+
+/* ── STATS ── */
+.z-stats { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
+.z-stat { padding: 1.8rem 2rem; border-right: 1px solid var(--border); text-align: center; }
+.z-stat:last-child { border-right: none; }
+.z-stat-num { font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--accent3); line-height: 1; }
+.z-stat-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+
+/* ── PARTNERS ── */
+.z-partners {
+  padding: 2rem 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
+}
+.z-partners-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); min-width: 120px; }
+.z-partner { font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); transition: color 0.2s; }
+.z-partner:hover { color: var(--muted); }
+
+/* ── FOOTER ── */
+.z-footer { padding: 3.5rem 3rem 2rem; border-top: 1px solid var(--border); }
+.z-footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.z-fbrand .z-logo { display: block; margin-bottom: 0.8rem; font-size: 1.5rem; }
+.z-fbrand p { font-size: 0.78rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
+.z-flinks h4 { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.z-flinks ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.z-flinks a { font-size: 0.8rem; color: var(--dim); transition: color 0.2s; }
+.z-flinks a:hover { color: var(--text); }
+.z-footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.7rem; color: var(--dim); flex-wrap: wrap; gap: 0.5rem; }
+.z-fta-notice { background: rgba(37,99,235,0.08); border: 1px solid var(--border); padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
+
+/* ── CART BUTTON ── */
+.z-cart-btn { background:var(--accent); color:#fff; border:none; padding:0.5rem 1.4rem; font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border-radius:var(--r); transition:background 0.2s; display:inline-flex; align-items:center; gap:0.5rem; }
+.z-cart-btn:hover { background:var(--accent2); }
+.snipcart-items-count { background:#fff; color:var(--accent); border-radius:50%; min-width:18px; height:18px; font-size:0.62rem; display:inline-flex; align-items:center; justify-content:center; font-weight:700; padding:0 3px; }
+
+/* ── PRICE DISPLAY ── */
+.z-price { font-family:'Rajdhani',sans-serif; font-size:2.2rem; font-weight:700; color:var(--text); margin-bottom:1.2rem; display:flex; align-items:baseline; gap:0.6rem; }
+.z-price-note { font-size:0.72rem; color:var(--muted); font-family:'Inter',sans-serif; font-weight:300; }
+
+/* ── PRODUCT CARD FOOTER (for listing page) ── */
+.z-pcard-footer { display:flex; align-items:center; justify-content:space-between; padding:0.8rem 1.5rem 1.2rem; border-top:1px solid var(--border); background:var(--card); }
+.z-pcard:hover .z-pcard-footer { background:var(--card2); }
+.z-card-price { font-family:'Rajdhani',sans-serif; font-size:1.3rem; font-weight:700; color:var(--text); }
+.z-card-buy { background:var(--accent); color:#fff; border:none; padding:0.4rem 0.9rem; font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; border-radius:var(--r); transition:background 0.2s; }
+.z-card-buy:hover { background:var(--accent2); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .z-nav { padding: 1rem 1.5rem; }
+  .z-navlinks { display: none; }
+  .z-stats { grid-template-columns: repeat(2,1fr); }
+  .z-footer-top { grid-template-columns: 1fr 1fr; }
+  .z-section { padding: 3rem 1.5rem; }
+  .z-page-header { padding: 3rem 1.5rem 2rem; }
+  .z-partners { padding: 1.5rem; gap: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .z-stats { grid-template-columns: repeat(2,1fr); }
+  .z-footer-top { grid-template-columns: 1fr; }
+}

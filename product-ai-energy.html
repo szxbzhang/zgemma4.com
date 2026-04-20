@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZGEMMA AI-Energy Box | HEMS Gateway for Europe</title>
+<meta name="description" content="ZGEMMA AI-Energy Box — Professional HEMS gateway with Zigbee, Modbus, SunSpec and OCPP. Amlogic S905Y4. Built for UK, Germany and the Netherlands.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO ── */
+.ze-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.ze-hero-left {
+  padding: 5rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.ze-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #34d399;
+  margin-bottom: 1.2rem;
+}
+.ze-eyebrow::before { content:''; display:block; width:22px; height:1px; background:#34d399; }
+.ze-hero h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.93;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+.ze-hero h1 em { color: #34d399; font-style: normal; }
+.ze-hero h1 b { color: var(--accent2); font-weight: 700; }
+.ze-tagline {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.ze-hero-desc {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  max-width: 460px;
+  margin-bottom: 2.2rem;
+  font-weight: 300;
+}
+.ze-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.ze-btn-green {
+  background: #059669;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--r);
+  transition: all 0.2s;
+  display: inline-block;
+}
+.ze-btn-green:hover { background: #10b981; transform: translateY(-1px); }
+.ze-markets {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ze-market-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); }
+.ze-market-flag { font-size: 1.1rem; opacity: 0.8; }
+
+/* RIGHT PANEL — abstract visual */
+.ze-hero-right {
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.ze-hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(16,185,129,0.07), transparent 65%);
+}
+.ze-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(16,185,129,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+/* SVG diagram placeholder */
+.ze-diagram { position: relative; z-index: 1; width: 100%; max-width: 400px; }
+.ze-new-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(16,185,129,0.15);
+  border: 1px solid rgba(52,211,153,0.35);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #34d399;
+  border-radius: var(--r);
+  z-index: 2;
+}
+
+/* ── PROTOCOL BADGES ── */
+.ze-protocols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.ze-proto {
+  background: var(--surface);
+  padding: 1.8rem 2rem;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.ze-proto:last-child { border-right: none; }
+.ze-proto-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.ze-proto-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #34d399;
+  margin-bottom: 0.3rem;
+}
+.ze-proto-desc { font-size: 0.68rem; color: var(--muted); line-height: 1.5; font-weight: 300; }
+
+/* ── USE CASE CARDS ── */
+.ze-usecases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.ze-usecase {
+  background: var(--card);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.ze-usecase:hover { background: var(--card2); }
+.ze-usecase::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: #059669;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.ze-usecase:hover::before { opacity: 1; }
+.ze-uc-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+.ze-uc-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.ze-uc-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+/* ── ROADMAP ── */
+.ze-roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.ze-phase {
+  background: var(--card);
+  padding: 2rem;
+}
+.ze-phase.current { background: var(--card2); border-top: 2px solid #059669; }
+.ze-phase-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 0.5rem;
+}
+.ze-phase.current .ze-phase-label { color: #34d399; }
+.ze-phase-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+.ze-phase ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.ze-phase li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.ze-phase li::before { content: '→'; color: var(--dim); flex-shrink: 0; font-size: 0.72rem; margin-top: 1px; }
+.ze-phase.current li::before { color: #34d399; }
+
+/* ── SPEC TABLE ── */
+.ze-spec-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+.ze-spec-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  background: var(--card);
+}
+.ze-spec-key {
+  padding: 0.7rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+}
+.ze-spec-val { padding: 0.7rem 1rem; font-size: 0.82rem; }
+.ze-spec-val.green { color: #34d399; }
+
+/* ── ENQUIRY STRIP ── */
+.ze-enquiry {
+  background: linear-gradient(135deg, #041a10 0%, var(--surface) 100%);
+  border-top: 1px solid rgba(5,150,105,0.3);
+  border-bottom: 1px solid rgba(5,150,105,0.3);
+  padding: 3.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.ze-enquiry-text h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.ze-enquiry-text p { font-size: 0.82rem; color: var(--muted); font-weight: 300; max-width: 500px; line-height: 1.65; }
+.ze-enquiry-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+@media(max-width:900px) {
+  .ze-hero { grid-template-columns: 1fr; }
+  .ze-hero-right { min-height: 260px; }
+  .ze-hero-left { padding: 3rem 1.5rem 2rem; }
+  .ze-protocols { grid-template-columns: repeat(2,1fr); }
+  .ze-usecases { grid-template-columns: 1fr; }
+  .ze-roadmap { grid-template-columns: 1fr; }
+  .ze-spec-wrap { grid-template-columns: 1fr; }
+  .ze-enquiry { flex-direction: column; padding: 2.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="ze-hero">
+  <div class="ze-hero-left">
+    <div class="ze-eyebrow">New Product · HEMS Gateway</div>
+    <h1>AI-Energy<br><em>Box</em></h1>
+    <div class="ze-tagline">Home Energy Management System Gateway</div>
+    <p class="ze-hero-desc">A professional-grade HEMS gateway built on Amlogic S905Y4, integrating Zigbee, Modbus RTU, SunSpec and OCPP into a single device. Designed for B2B deployment across UK, Germany and the Netherlands — with a clear path to solar, EV and grid-scale integration.</p>
+    <div class="z-price" style="color:var(--text)">€299.00 <span class="z-price-note">EUR · B2B pricing available on request</span></div>
+    <div class="ze-hero-btns">
+      <button class="snipcart-add-item ze-btn-green"
+        data-item-id="zgemma-ai-energy-box"
+        data-item-price="299.00"
+        data-item-url="https://www.zgemma.org/product-ai-energy.html"
+        data-item-name="ZGEMMA AI-Energy Box"
+        data-item-description="HEMS Gateway · Zigbee, Modbus RTU, SunSpec, OCPP · Amlogic S905Y4"
+        data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg"
+        data-item-categories="Energy,HEMS">
+        Pre-order Now →
+      </button>
+      <a href="contact.html" class="z-btn-ghost">Become a Partner</a>
+    </div>
+    <div class="ze-markets">
+      <span class="ze-market-label">Target Markets</span>
+      <span class="ze-market-flag">🇬🇧</span>
+      <span class="ze-market-flag">🇩🇪</span>
+      <span class="ze-market-flag">🇳🇱</span>
+    </div>
+  </div>
+
+  <div class="ze-hero-right">
+    <div class="ze-hero-grid"></div>
+    <div class="ze-new-badge">Coming Soon · Pre-order Open</div>
+    <!-- Abstract Energy Diagram -->
+    <div class="ze-diagram">
+      <svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;opacity:0.85">
+        <!-- Central hub -->
+        <rect x="140" y="120" width="100" height="80" rx="6" fill="#0b1c38" stroke="#059669" stroke-width="1.5"/>
+        <text x="190" y="153" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="11" font-weight="700" fill="#34d399" letter-spacing="1">AI-ENERGY</text>
+        <text x="190" y="169" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="11" font-weight="700" fill="#34d399" letter-spacing="1">BOX</text>
+        <text x="190" y="185" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#6b8bb5">S905Y4 · Linux</text>
+
+        <!-- Zigbee node -->
+        <circle cx="50" cy="80" r="28" fill="#08142b" stroke="#1a3560" stroke-width="1"/>
+        <text x="50" y="76" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#60a5fa">Zigbee</text>
+        <text x="50" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Smart Meter</text>
+        <text x="50" y="99" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Sensors</text>
+        <line x1="78" y1="95" x2="140" y2="140" stroke="#1a3560" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- Modbus node -->
+        <circle cx="50" cy="240" r="28" fill="#08142b" stroke="#1a3560" stroke-width="1"/>
+        <text x="50" y="236" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#60a5fa">Modbus</text>
+        <text x="50" y="249" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">RS485</text>
+        <text x="50" y="259" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Inverter</text>
+        <line x1="78" y1="225" x2="140" y2="185" stroke="#1a3560" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- SunSpec node -->
+        <circle cx="330" cy="80" r="28" fill="#08142b" stroke="#1a3560" stroke-width="1"/>
+        <text x="330" y="76" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#34d399">SunSpec</text>
+        <text x="330" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Solar PV</text>
+        <text x="330" y="99" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Monitoring</text>
+        <line x1="302" y1="95" x2="240" y2="140" stroke="#1a3560" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- OCPP node -->
+        <circle cx="330" cy="240" r="28" fill="#08142b" stroke="#1a3560" stroke-width="1"/>
+        <text x="330" y="236" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#34d399">OCPP</text>
+        <text x="330" y="249" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">EV Charger</text>
+        <text x="330" y="259" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6b8bb5">Control</text>
+        <line x1="302" y1="225" x2="240" y2="185" stroke="#1a3560" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- Cloud / Grid top -->
+        <rect x="155" y="20" width="70" height="36" rx="4" fill="#08142b" stroke="#1a3560" stroke-width="1"/>
+        <text x="190" y="36" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#6b8bb5">CLOUD</text>
+        <text x="190" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#3a3835">Grid / VPP</text>
+        <line x1="190" y1="56" x2="190" y2="120" stroke="#059669" stroke-width="1.5"/>
+        <polygon points="186,112 190,120 194,112" fill="#059669"/>
+
+        <!-- Pulse dots on lines -->
+        <circle cx="109" cy="118" r="3" fill="#059669" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="109" cy="207" r="3" fill="#059669" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="271" cy="118" r="3" fill="#34d399" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="271" cy="207" r="3" fill="#34d399" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOLS -->
+<div class="ze-protocols">
+  <div class="ze-proto">
+    <div class="ze-proto-icon">📡</div>
+    <div class="ze-proto-name">Zigbee</div>
+    <div class="ze-proto-desc">Smart meter, sensor and device integration. IEEE 802.15.4 mesh network for low-power home devices.</div>
+  </div>
+  <div class="ze-proto">
+    <div class="ze-proto-icon">🔌</div>
+    <div class="ze-proto-name">Modbus RTU</div>
+    <div class="ze-proto-desc">USB↔RS485 bridge for industrial inverter and battery system communication. Widely adopted in Europe.</div>
+  </div>
+  <div class="ze-proto">
+    <div class="ze-proto-icon">☀️</div>
+    <div class="ze-proto-name">SunSpec</div>
+    <div class="ze-proto-desc">Open standard for solar PV monitoring and control. Interoperability across inverter manufacturers.</div>
+  </div>
+  <div class="ze-proto">
+    <div class="ze-proto-icon">⚡</div>
+    <div class="ze-proto-name">OCPP</div>
+    <div class="ze-proto-desc">Open Charge Point Protocol for EV charger management and smart charging control at residential level.</div>
+  </div>
+</div>
+
+<!-- USE CASES -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Applications</div><div class="z-sec-title">Who Is It For</div></div>
+  </div>
+  <div class="ze-usecases">
+    <div class="ze-usecase">
+      <div class="ze-uc-icon">🏢</div>
+      <div class="ze-uc-title">System Integrators &amp; Installers</div>
+      <div class="ze-uc-desc">Deploy a single gateway that bridges all major energy protocols. Reduce installation complexity and simplify remote monitoring across residential and light-commercial sites. Our B2B model offers volume pricing and white-label options.</div>
+    </div>
+    <div class="ze-usecase">
+      <div class="ze-uc-icon">☀️</div>
+      <div class="ze-uc-title">Solar &amp; Battery Vendors</div>
+      <div class="ze-uc-desc">Integrate SunSpec-compliant monitoring into your installations without proprietary gateways. The AI-Energy Box reads inverter data via Modbus/SunSpec and pushes to your cloud via standard APIs.</div>
+    </div>
+    <div class="ze-usecase">
+      <div class="ze-uc-icon">🔋</div>
+      <div class="ze-uc-title">EV Charging Networks</div>
+      <div class="ze-uc-desc">OCPP-compliant charger management from a residential gateway. Enable smart load balancing, scheduled charging and grid-aware control — compatible with major OCPP backends.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Hardware</div><div class="z-sec-title">Specifications</div></div>
+  </div>
+  <div class="ze-spec-wrap">
+    <div class="ze-spec-row"><div class="ze-spec-key">SoC</div><div class="ze-spec-val">Amlogic S905Y4 · Quad-core Cortex-A35 · 1.8GHz</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">GPU</div><div class="ze-spec-val">Mali-G31 MP2</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">RAM</div><div class="ze-spec-val">2GB / 4GB LPDDR4</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Storage</div><div class="ze-spec-val">16GB / 32GB eMMC</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">OS</div><div class="ze-spec-val">Linux (Android TV optional)</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Zigbee</div><div class="ze-spec-val ze-spec-val green">Built-in · IEEE 802.15.4</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Modbus RTU</div><div class="ze-spec-val ze-spec-val green">USB 2.0 → RS485 Bridge</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">SunSpec</div><div class="ze-spec-val ze-spec-val green">Over Modbus TCP/RTU</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">OCPP</div><div class="ze-spec-val ze-spec-val green">OCPP 1.6J / 2.0.1</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Ethernet</div><div class="ze-spec-val">1× Gigabit Ethernet</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">WiFi</div><div class="ze-spec-val">2.4GHz / 5GHz 802.11ac</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">USB</div><div class="ze-spec-val">2× USB 2.0 · 1× USB 3.0</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Bluetooth</div><div class="ze-spec-val">BT 5.0</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Video Out</div><div class="ze-spec-val">HDMI 2.1 (4K)</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Power</div><div class="ze-spec-val">12V DC · &lt;8W typical</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Markets</div><div class="ze-spec-val">🇬🇧 UK · 🇩🇪 Germany · 🇳🇱 Netherlands</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Next-gen SoC</div><div class="ze-spec-val" style="color:var(--muted)">Rockchip RK3588 (Roadmap)</div></div>
+    <div class="ze-spec-row"><div class="ze-spec-key">Certifications</div><div class="ze-spec-val" style="color:var(--muted)">CE · RoHS (In progress)</div></div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Product Strategy</div><div class="z-sec-title">Roadmap</div></div>
+  </div>
+  <div class="ze-roadmap">
+    <div class="ze-phase current">
+      <div class="ze-phase-label">Phase 1 · Now</div>
+      <div class="ze-phase-title">B2B Launch</div>
+      <ul>
+        <li>Amlogic S905Y4 platform</li>
+        <li>Zigbee + Modbus RTU + SunSpec + OCPP</li>
+        <li>UK, Germany, Netherlands markets</li>
+        <li>System integrators &amp; installers</li>
+        <li>Volume pricing available</li>
+        <li>Pre-orders open now</li>
+      </ul>
+    </div>
+    <div class="ze-phase">
+      <div class="ze-phase-label">Phase 2 · 2025–2026</div>
+      <div class="ze-phase-title">Installer Channel</div>
+      <ul>
+        <li>Certified installer programme</li>
+        <li>Cloud management dashboard</li>
+        <li>Fleet monitoring &amp; remote config</li>
+        <li>Solar PV vendor partnerships</li>
+        <li>EV charging operator integrations</li>
+        <li>Expand to wider EU markets</li>
+      </ul>
+    </div>
+    <div class="ze-phase">
+      <div class="ze-phase-label">Phase 3 · 2026+</div>
+      <div class="ze-phase-title">Grid &amp; VPP Scale</div>
+      <ul>
+        <li>Rockchip RK3588 platform</li>
+        <li>Grid operator integrations</li>
+        <li>Virtual Power Plant (VPP) support</li>
+        <li>DSO / utility partnerships</li>
+        <li>AI-driven load forecasting</li>
+        <li>Pan-European rollout</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY STRIP -->
+<div class="ze-enquiry">
+  <div class="ze-enquiry-text">
+    <h3>Interested in the AI-Energy Box?</h3>
+    <p>We are currently taking pre-orders and partner enquiries for the UK, Germany and Netherlands markets. Contact us to discuss volume pricing, integration requirements or distribution partnerships.</p>
+  </div>
+  <div class="ze-enquiry-btns">
+    <a href="contact.html?product=ai-energy-box" class="ze-btn-green">Request a Quote</a>
+    <a href="careers.html" class="z-btn-ghost">We're Hiring Engineers</a>
+  </div>
+</div>
+
+<div class="z-partners">
+  <span class="z-partners-label">Protocols Supported</span>
+  <span class="z-partner" style="color:#34d399">Zigbee</span>
+  <span class="z-partner" style="color:#34d399">Modbus RTU</span>
+  <span class="z-partner" style="color:#34d399">SunSpec</span>
+  <span class="z-partner" style="color:#34d399">OCPP 1.6J</span>
+  <span class="z-partner" style="color:#34d399">OCPP 2.0.1</span>
+  <span class="z-partner">RS485</span>
+  <span class="z-partner">IEEE 802.15.4</span>
+</div>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Gemma Technology (Shenzhen) Co., Ltd<br><br>Professional hardware for European markets.<br>DVB receivers · HEMS Gateways · Android TV.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul>
+      <li><a href="product-ai-energy.html" style="color:var(--accent3)">AI-Energy Box ↗</a></li>
+      <li><a href="product-airbox.html">AIRBOX Y1</a></li>
+      <li><a href="product-h17combo.html">H17 COMBO</a></li>
+      <li><a href="products.html">All DVB Products</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Company</h4><ul>
+      <li><a href="news.html">News</a></li>
+      <li><a href="developer.html">Developers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul>
+      <li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li>
+      <li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li>
+      <li><a href="contact.html">Wholesale Enquiry</a></li>
+    </ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology · Shenzhen, China</span>
+    <span class="z-fta-notice">CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

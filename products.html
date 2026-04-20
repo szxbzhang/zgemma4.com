@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | ZGEMMA DVB Receivers</title>
+<meta name="description" content="Full range of ZGEMMA DVB hybrid receivers — H17, H9, H8 series and AIRBOX Y1. Enigma2 Linux, 4K UHD, FTA only.">
+<link rel="stylesheet" href="style.css">
+<style>
+.z-filter-bar { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.z-filter-btn { background:transparent; color:var(--muted); border:1px solid var(--border); padding:0.4rem 1rem; font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border-radius:var(--r); transition:all 0.2s; }
+.z-filter-btn:hover, .z-filter-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.z-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+.z-pcard { background:var(--card); display:block; color:inherit; transition:background 0.2s; position:relative; overflow:hidden; }
+.z-pcard:hover { background:var(--card2); }
+.z-pcard-img { width:100%; height:200px; object-fit:contain; background:var(--surface); padding:1.8rem; border-bottom:1px solid var(--border); transition:transform 0.3s; }
+.z-pcard:hover .z-pcard-img { transform:scale(1.03); }
+.z-pcard-body { padding:1.5rem; }
+.z-badge { display:inline-block; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent3); background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.25); padding:2px 9px; border-radius:2px; margin-bottom:0.8rem; }
+.z-pname { font-family:'Rajdhani',sans-serif; font-size:1.25rem; font-weight:700; letter-spacing:0.04em; margin-bottom:0.4rem; }
+.z-pdesc { font-size:0.78rem; color:var(--muted); line-height:1.6; font-weight:300; margin-bottom:0.9rem; }
+.z-ptags { display:flex; flex-wrap:wrap; gap:0.3rem; }
+.z-ptag { font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--border); padding:2px 6px; border-radius:2px; }
+.z-parrow { position:absolute; bottom:1.2rem; right:1.2rem; width:26px; height:26px; border:1px solid var(--dim); display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:var(--dim); border-radius:2px; transition:all 0.2s; }
+.z-pcard:hover .z-parrow { border-color:var(--accent2); color:var(--accent2); }
+.z-series-divider { padding:1.5rem 0 1rem; border-top:1px solid var(--border); margin-top:3rem; }
+.z-series-divider:first-child { border-top:none; margin-top:0; }
+.z-series-label { font-family:'Rajdhani',sans-serif; font-size:1.4rem; font-weight:700; letter-spacing:0.06em; margin-bottom:0.3rem; }
+.z-series-desc { font-size:0.78rem; color:var(--muted); font-weight:300; }
+@media(max-width:900px){ .z-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .z-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<div class="z-page-header">
+  <div class="z-page-eyebrow">Full Range</div>
+  <div class="z-page-title">All Products</div>
+</div>
+
+<section class="z-section">
+
+  <!-- H17 SERIES -->
+  <div class="z-series-divider">
+    <div class="z-series-label">H17 Series — Latest Generation</div>
+    <div class="z-series-desc">Broadcom BCM7251S · 12,000 DMIPS · 4K UHD · Gigabit Ethernet</div>
+  </div>
+  <div class="z-grid">
+    <div class="z-pcard">
+      <a href="product-h17combo.html" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H17 COMBO">
+        <div class="z-pcard-body">
+          <span class="z-badge">Flagship</span>
+          <div class="z-pname">H17 COMBO</div>
+          <div class="z-pdesc">DVB-S2X + DVB-C/T2 hybrid, 4K UHD, 16GB eMMC, 1GB DDR3, CI+, WiFi, USB 3.0.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X+T2/C</span><span class="z-ptag">4K</span><span class="z-ptag">CI+</span><span class="z-ptag">WiFi</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€139.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h17-combo" data-item-price="139.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H17 COMBO" data-item-description="4K UHD · DVB-S2X + DVB-C/T2 · Enigma2" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+    <div class="z-pcard">
+      <a href="product-h17twin.html" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H17 TWIN">
+        <div class="z-pcard-body">
+          <span class="z-badge">New</span>
+          <div class="z-pname">H17 TWIN</div>
+          <div class="z-pdesc">Dual DVB-S2X satellite tuners, 4K UHD, 16GB eMMC, 1GB DDR3, CI+, WiFi.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X+S2X</span><span class="z-ptag">4K</span><span class="z-ptag">CI+</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€129.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h17-twin" data-item-price="129.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H17 TWIN" data-item-description="4K UHD · Dual DVB-S2X · Enigma2" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AIRBOX -->
+  <div class="z-series-divider">
+    <div class="z-series-label">AIRBOX — Android TV</div>
+    <div class="z-series-desc">Google-certified Android TV · 4K HDR · Google Assistant · Chromecast</div>
+  </div>
+  <div class="z-grid">
+    <div class="z-pcard">
+      <a href="product-airbox.html" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="AIRBOX Y1">
+        <div class="z-pcard-body">
+          <span class="z-badge">Android TV 2024</span>
+          <div class="z-pname">AIRBOX Y1</div>
+          <div class="z-pdesc">Android TV streaming box with 4K HDR, Google Assistant, built-in Chromecast and WiFi.</div>
+          <div class="z-ptags"><span class="z-ptag">Android</span><span class="z-ptag">4K HDR</span><span class="z-ptag">Google TV</span><span class="z-ptag">Chromecast</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€49.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-airbox-y1" data-item-price="49.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA AIRBOX Y1" data-item-description="Android TV · 4K HDR · Google Assistant · Chromecast" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- H11 SERIES -->
+  <div class="z-series-divider">
+    <div class="z-series-label">H11 Series</div>
+    <div class="z-series-desc">Enigma2 Linux · 4K UHD · Dual Core</div>
+  </div>
+  <div class="z-grid">
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H11">
+        <div class="z-pcard-body">
+          <span class="z-badge">Combo</span>
+          <div class="z-pname">H11</div>
+          <div class="z-pdesc">4K UHD hybrid receiver, Enigma2 Linux, dual core processor.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X+T2/C</span><span class="z-ptag">4K</span><span class="z-ptag">Enigma2</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€89.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h11" data-item-price="89.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H11" data-item-description="4K UHD · DVB-S2X+T2/C · Enigma2 Linux" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H11S">
+        <div class="z-pcard-body">
+          <span class="z-badge">Satellite</span>
+          <div class="z-pname">H11S</div>
+          <div class="z-pdesc">Satellite-only variant with DVB-S2X tuner, 4K UHD, Enigma2.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X</span><span class="z-ptag">4K</span><span class="z-ptag">Enigma2</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€84.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h11s" data-item-price="84.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H11S" data-item-description="4K UHD · DVB-S2X · Enigma2 Linux" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- H9 SERIES -->
+  <div class="z-series-divider">
+    <div class="z-series-label">H9 Series</div>
+    <div class="z-series-desc">Enigma2 Linux / Android Dual System · 4K UHD · Multiple Tuner Configurations</div>
+  </div>
+  <div class="z-grid">
+    <div class="z-pcard">
+      <a href="product-h9combo.html" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H9 COMBO">
+        <div class="z-pcard-body">
+          <span class="z-badge">Best Seller</span>
+          <div class="z-pname">H9 COMBO</div>
+          <div class="z-pdesc">S2X + T2/C 4K UHD, CI+, CA, 300MHz WiFi, SATA HDD, 8GB EMMC.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X+T2/C</span><span class="z-ptag">4K</span><span class="z-ptag">CI+</span><span class="z-ptag">SATA</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€109.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h9-combo" data-item-price="109.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H9 COMBO" data-item-description="4K UHD · DVB-S2X+T2/C · CI+ · SATA" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H9 TWIN">
+        <div class="z-pcard-body">
+          <span class="z-badge">Twin Sat</span>
+          <div class="z-pname">H9 TWIN</div>
+          <div class="z-pdesc">Dual S2X + S2X 4K UHD, CI+, 300MHz WiFi, SATA HDD, 8GB EMMC.</div>
+          <div class="z-ptags"><span class="z-ptag">S2X+S2X</span><span class="z-ptag">4K</span><span class="z-ptag">WiFi</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€119.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h9-twin" data-item-price="119.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H9 TWIN" data-item-description="4K UHD · Dual DVB-S2X · CI+" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H9.2H SE">
+        <div class="z-pcard-body">
+          <span class="z-badge">SE Edition</span>
+          <div class="z-pname">H9.2H SE</div>
+          <div class="z-pdesc">Special Edition — S2 + T2/C hybrid 4K UHD receiver.</div>
+          <div class="z-ptags"><span class="z-ptag">S2+T2/C</span><span class="z-ptag">4K</span><span class="z-ptag">SE</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€94.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h9-2h-se" data-item-price="94.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H9.2H SE" data-item-description="4K UHD · DVB-S2+T2/C · Special Edition" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- H8 SERIES -->
+  <div class="z-series-divider">
+    <div class="z-series-label">H8 Series</div>
+    <div class="z-series-desc">Full HD &amp; 4K · Enigma2 Linux · SATA HDD Ready</div>
+  </div>
+  <div class="z-grid">
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H8.2H PLUS">
+        <div class="z-pcard-body">
+          <span class="z-badge">Popular</span>
+          <div class="z-pname">H8.2H PLUS</div>
+          <div class="z-pdesc">Enhanced DVB-S2 + DVB-T2/C hybrid, WiFi, SATA, USB 3.0.</div>
+          <div class="z-ptags"><span class="z-ptag">S2+T2/C</span><span class="z-ptag">WiFi</span><span class="z-ptag">SATA</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€74.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h8-2h-plus" data-item-price="74.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H8.2H PLUS" data-item-description="DVB-S2+T2/C · WiFi · SATA · USB 3.0" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+    <div class="z-pcard">
+      <a href="#" style="display:block;color:inherit;text-decoration:none;">
+        <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H8.2H">
+        <div class="z-pcard-body">
+          <span class="z-badge">Standard</span>
+          <div class="z-pname">H8.2H</div>
+          <div class="z-pdesc">DVB-S2 + DVB-T2/C hybrid receiver, Enigma2 Linux, SATA ready.</div>
+          <div class="z-ptags"><span class="z-ptag">S2+T2/C</span><span class="z-ptag">Enigma2</span><span class="z-ptag">SATA</span></div>
+          <div class="z-parrow">→</div>
+        </div>
+      </a>
+      <div class="z-pcard-footer">
+        <span class="z-card-price">€69.99</span>
+        <button class="snipcart-add-item z-card-buy" data-item-id="zgemma-h8-2h" data-item-price="69.99" data-item-url="https://www.zgemma.org/products.html" data-item-name="ZGEMMA H8.2H" data-item-description="DVB-S2+T2/C · Enigma2 Linux · SATA" data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="z-partners">
+  <span class="z-partners-label">Software Partners</span>
+  <span class="z-partner">OpenATV</span><span class="z-partner">OpenPLi</span><span class="z-partner">OpenViX</span><span class="z-partner">OpenBH</span><span class="z-partner">OpenSPA</span><span class="z-partner">Pure-E2</span><span class="z-partner">EGAMI</span>
+</div>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Gemma Technology (Shenzhen) Co., Ltd<br><br>Professional DVB hardware for European broadcast markets.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="product-airbox.html">AIRBOX Y1</a></li><li><a href="product-h17combo.html">H17 COMBO</a></li><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

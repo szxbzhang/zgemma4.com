@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZGEMMA H17 COMBO | 4K UHD DVB-S2X + DVB-C/T2</title>
+<meta name="description" content="ZGEMMA H17 COMBO — 4K UHD hybrid receiver with DVB-S2X and DVB-C/T2. Enigma2 Linux, 16GB eMMC, built-in WiFi, CI+. Buy on Amazon EU.">
+<link rel="stylesheet" href="style.css">
+<style>
+.z-product-hero { display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid var(--border); }
+.z-product-img-panel { background:var(--surface); border-right:1px solid var(--border); padding:3rem; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; min-height:460px; position:relative; }
+.z-product-img-panel::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center, rgba(37,99,235,0.08),transparent 70%); }
+.z-main-img { max-width:380px; width:100%; object-fit:contain; filter:drop-shadow(0 20px 60px rgba(37,99,235,0.3)); position:relative; z-index:1; }
+.z-thumb-row { display:flex; gap:0.6rem; position:relative; z-index:1; }
+.z-thumb { width:60px; height:60px; object-fit:contain; background:var(--card); border:1px solid var(--border); padding:0.4rem; border-radius:var(--r); cursor:pointer; transition:border-color 0.2s; }
+.z-thumb.active, .z-thumb:hover { border-color:var(--accent2); }
+.z-product-info { padding:3rem; }
+.z-breadcrumb { font-size:0.68rem; color:var(--muted); margin-bottom:1.5rem; display:flex; gap:0.4rem; align-items:center; }
+.z-breadcrumb a { color:var(--muted); transition:color 0.2s; } .z-breadcrumb a:hover { color:var(--text); }
+.z-breadcrumb span { color:var(--dim); }
+.z-product-badge { display:inline-block; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent3); background:rgba(37,99,235,0.14); border:1px solid rgba(96,165,250,0.25); padding:2px 9px; border-radius:2px; margin-bottom:1rem; }
+.z-product-title { font-family:'Rajdhani',sans-serif; font-size:2.4rem; font-weight:700; line-height:1; letter-spacing:0.02em; margin-bottom:0.5rem; }
+.z-product-subtitle { font-size:0.85rem; color:var(--muted); margin-bottom:1.5rem; line-height:1.6; font-weight:300; }
+.z-product-cta { display:flex; gap:0.8rem; flex-wrap:wrap; margin-bottom:2rem; }
+.z-cta-main { background:var(--accent); color:#fff; border:none; padding:0.85rem 2rem; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; border-radius:var(--r); letter-spacing:0.04em; transition:background 0.2s; display:inline-block; }
+.z-cta-main:hover { background:var(--accent2); }
+.z-cta-sec { background:transparent; color:var(--text); border:1px solid var(--border); padding:0.85rem 1.6rem; font-family:'Inter',sans-serif; font-size:0.85rem; cursor:pointer; border-radius:var(--r); letter-spacing:0.04em; transition:border-color 0.2s; display:inline-block; }
+.z-cta-sec:hover { border-color:var(--muted); }
+.z-amazon-links { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1rem 1.2rem; margin-bottom:1.8rem; }
+.z-amazon-label { font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+.z-amazon-flags { display:flex; gap:0.8rem; flex-wrap:wrap; }
+.z-aflag { display:flex; align-items:center; gap:0.3rem; font-size:0.78rem; color:var(--accent3); cursor:pointer; transition:color 0.2s; text-decoration:none; }
+.z-aflag:hover { color:var(--text); }
+.z-highlight-pills { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.z-pill { background:var(--surface); border:1px solid var(--border); padding:0.4rem 0.9rem; border-radius:20px; font-size:0.7rem; color:var(--muted); letter-spacing:0.05em; }
+
+/* TABS */
+.z-tabs-wrap { border-top:1px solid var(--border); }
+.z-tabs { display:flex; border-bottom:1px solid var(--border); padding:0 3rem; background:var(--surface); }
+.z-tab { padding:1rem 1.5rem; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; transition:all 0.2s; }
+.z-tab.active { color:var(--text); border-bottom-color:var(--accent2); }
+.z-tab-content { display:none; padding:3rem; }
+.z-tab-content.active { display:block; }
+
+/* SPECS TABLE */
+.z-spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--border); margin-bottom:2rem; }
+.z-spec-row { display:grid; grid-template-columns:180px 1fr; background:var(--card); }
+.z-spec-key { padding:0.7rem 1rem; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); border-right:1px solid var(--border); }
+.z-spec-val { padding:0.7rem 1rem; font-size:0.82rem; color:var(--text); }
+
+/* DOWNLOADS IN PRODUCT */
+.z-fw-list { display:flex; flex-direction:column; gap:1px; background:var(--border); }
+.z-fw-item { background:var(--card); display:flex; align-items:center; justify-content:space-between; padding:1rem 1.2rem; transition:background 0.2s; }
+.z-fw-item:hover { background:var(--card2); }
+.z-fw-name { font-size:0.85rem; font-weight:500; }
+.z-fw-meta { font-size:0.72rem; color:var(--muted); margin-top:0.2rem; }
+.z-fw-dl { background:var(--accent); color:#fff; border:none; padding:0.4rem 1rem; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; border-radius:var(--r); transition:background 0.2s; text-decoration:none; }
+.z-fw-dl:hover { background:var(--accent2); }
+
+@media(max-width:900px){
+  .z-product-hero { grid-template-columns:1fr; }
+  .z-product-img-panel { min-height:300px; }
+  .z-product-info { padding:2rem 1.5rem; }
+  .z-tabs { padding:0 1.5rem; overflow-x:auto; }
+  .z-tab-content { padding:2rem 1.5rem; }
+  .z-spec-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<!-- PRODUCT HERO -->
+<div class="z-product-hero">
+  <div class="z-product-img-panel">
+    <img class="z-main-img" id="mainImg"
+      src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg"
+      alt="ZGEMMA H17 COMBO">
+    <div class="z-thumb-row">
+      <img class="z-thumb active" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="Front view" onclick="switchImg(this)">
+      <img class="z-thumb" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="Rear ports" onclick="switchImg(this)">
+      <img class="z-thumb" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="Box contents" onclick="switchImg(this)">
+    </div>
+  </div>
+  <div class="z-product-info">
+    <div class="z-breadcrumb">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="products.html">Products</a><span>/</span>
+      <span style="color:var(--text)">H17 COMBO</span>
+    </div>
+    <div class="z-product-badge">Flagship · 4K UHD · Enigma2</div>
+    <div class="z-product-title">ZGEMMA H17 COMBO</div>
+    <div class="z-product-subtitle">4K UHD Hybrid Receiver · DVB-S2X + DVB-C/T2 · Enigma2 Linux<br>Broadcom BCM7251S · 12,000 DMIPS · 16GB eMMC · 1GB DDR3</div>
+
+    <div class="z-price">€139.99 <span class="z-price-note">EUR · Free shipping EU · VAT may apply</span></div>
+
+    <div class="z-product-cta">
+      <button class="snipcart-add-item z-cta-main"
+        data-item-id="zgemma-h17-combo"
+        data-item-price="139.99"
+        data-item-url="https://www.zgemma.org/product-h17combo.html"
+        data-item-name="ZGEMMA H17 COMBO"
+        data-item-description="4K UHD Hybrid Receiver · DVB-S2X + DVB-C/T2 · Enigma2 Linux"
+        data-item-image="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg"
+        data-item-categories="DVB Receivers,H17 Series">
+        Add to Cart →
+      </button>
+      <a href="downloads.html" class="z-cta-sec">Firmware Downloads</a>
+      <a href="contact.html" class="z-cta-sec">Enquire Wholesale</a>
+    </div>
+
+    <div class="z-highlight-pills">
+      <span class="z-pill">DVB-S2X + DVB-C/T2</span>
+      <span class="z-pill">4K UHD 3840×2160</span>
+      <span class="z-pill">Enigma2 Linux</span>
+      <span class="z-pill">Built-in WiFi 300MHz</span>
+      <span class="z-pill">1× CI+ Slot</span>
+      <span class="z-pill">USB 3.0 + USB 2.0</span>
+      <span class="z-pill">Gigabit Ethernet</span>
+      <span class="z-pill">HDMI 2.0</span>
+      <span class="z-pill">CE · RoHS</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="z-tabs-wrap">
+  <div class="z-tabs">
+    <div class="z-tab active" onclick="switchTab('specs',this)">Specifications</div>
+    <div class="z-tab" onclick="switchTab('firmware',this)">Firmware</div>
+    <div class="z-tab" onclick="switchTab('box',this)">In The Box</div>
+    <div class="z-tab" onclick="switchTab('compat',this)">Compatibility</div>
+  </div>
+
+  <div class="z-tab-content active" id="tab-specs">
+    <div class="z-spec-grid">
+      <div class="z-spec-row"><div class="z-spec-key">Chipset</div><div class="z-spec-val">Broadcom BCM7251S</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">CPU</div><div class="z-spec-val">Dual Core · 12,000 DMIPS</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">RAM</div><div class="z-spec-val">1GB DDR3</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Flash</div><div class="z-spec-val">16GB eMMC</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Tuner 1</div><div class="z-spec-val">DVB-S2X (Satellite)</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Tuner 2</div><div class="z-spec-val">DVB-C/T2 (Cable / Terrestrial)</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Resolution</div><div class="z-spec-val">4K UHD 3840×2160 · HDR</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">OS</div><div class="z-spec-val">Enigma2 Linux (openATV / openPLi / openViX)</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">WiFi</div><div class="z-spec-val">Built-in 300MHz 802.11b/g/n</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Ethernet</div><div class="z-spec-val">1× Gigabit (1000Mbps)</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">CI Slot</div><div class="z-spec-val">1× Common Interface CI+ 1.3</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Card Reader</div><div class="z-spec-val">1× Smartcard Reader</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">USB</div><div class="z-spec-val">1× USB 3.0 + 1× USB 2.0</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Video Out</div><div class="z-spec-val">HDMI 2.0 (4K HDR)</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Audio Out</div><div class="z-spec-val">S/PDIF Optical + HDMI</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Streaming</div><div class="z-spec-val">YouTube · Kodi · Stalker · IPTV</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Kernel</div><div class="z-spec-val">Linux 4.01+</div></div>
+      <div class="z-spec-row"><div class="z-spec-key">Certifications</div><div class="z-spec-val">CE · RoHS</div></div>
+    </div>
+  </div>
+
+  <div class="z-tab-content" id="tab-firmware">
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;font-weight:300;">The H17 COMBO supports multiple open-source Enigma2 images. Download directly from the official image providers below.</p>
+    <div class="z-fw-list">
+      <div class="z-fw-item">
+        <div><div class="z-fw-name">OpenATV</div><div class="z-fw-meta">Recommended · Latest stable release</div></div>
+        <a href="https://images.mynonpublic.com/openatv/current/" target="_blank" class="z-fw-dl">Download</a>
+      </div>
+      <div class="z-fw-item">
+        <div><div class="z-fw-name">OpenPLi</div><div class="z-fw-meta">Community favourite · Frequent updates</div></div>
+        <a href="https://openpli.org/download/zgemma/" target="_blank" class="z-fw-dl">Download</a>
+      </div>
+      <div class="z-fw-item">
+        <div><div class="z-fw-name">OpenViX</div><div class="z-fw-meta">Feature-rich · Active community</div></div>
+        <a href="http://www.openvix.co.uk/index.php/downloads/zgemma-images/" target="_blank" class="z-fw-dl">Download</a>
+      </div>
+      <div class="z-fw-item">
+        <div><div class="z-fw-name">OpenBH</div><div class="z-fw-meta">BlackHole image · Stable build</div></div>
+        <a href="https://images.openbh.net/" target="_blank" class="z-fw-dl">Download</a>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:var(--dim);margin-top:1rem;">Flash instructions available on the <a href="downloads.html" style="color:var(--accent3)">Downloads page</a>. All images are provided by third-party open-source teams.</p>
+  </div>
+
+  <div class="z-tab-content" id="tab-box">
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;font-weight:300;">Standard package contents for ZGEMMA H17 COMBO:</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem;">
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;"><span style="color:var(--accent3);font-size:0.9rem;">✓</span> 1× ZGEMMA H17 COMBO receiver unit</li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;"><span style="color:var(--accent3);font-size:0.9rem;">✓</span> 1× HDMI cable</li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;"><span style="color:var(--accent3);font-size:0.9rem;">✓</span> 1× IR remote control + batteries</li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;"><span style="color:var(--accent3);font-size:0.9rem;">✓</span> 1× Power adapter (EU/UK)</li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;"><span style="color:var(--accent3);font-size:0.9rem;">✓</span> 1× Quick start guide</li>
+      <li style="display:flex;align-items:center;gap:0.8rem;font-size:0.85rem;color:var(--muted);"><span style="color:var(--dim);font-size:0.9rem;">○</span> External HDD / CI card not included</li>
+    </ul>
+  </div>
+
+  <div class="z-tab-content" id="tab-compat">
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;font-weight:300;">Compatible Enigma2 images and community resources:</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);">
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">OpenATV</div><div style="font-size:0.72rem;color:var(--muted);">images.mynonpublic.com</div></div>
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">OpenPLi</div><div style="font-size:0.72rem;color:var(--muted);">openpli.org</div></div>
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">OpenViX</div><div style="font-size:0.72rem;color:var(--muted);">openvix.co.uk</div></div>
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">OpenBH</div><div style="font-size:0.72rem;color:var(--muted);">images.openbh.net</div></div>
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">OpenSPA</div><div style="font-size:0.72rem;color:var(--muted);">openspa.webhop.info</div></div>
+      <div style="background:var(--card);padding:1.2rem;"><div style="font-size:0.85rem;font-weight:500;margin-bottom:0.3rem;">EGAMI</div><div style="font-size:0.72rem;color:var(--muted);">egami-image.com</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="z-partners">
+  <span class="z-partners-label">Software Partners</span>
+  <span class="z-partner">OpenATV</span><span class="z-partner">OpenPLi</span><span class="z-partner">OpenViX</span><span class="z-partner">OpenBH</span><span class="z-partner">OpenSPA</span><span class="z-partner">Pure-E2</span><span class="z-partner">EGAMI</span>
+</div>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Professional DVB hardware for European broadcast markets.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="product-airbox.html">AIRBOX Y1</a></li><li><a href="product-h17combo.html">H17 COMBO</a></li><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+function switchImg(el) {
+  document.querySelectorAll('.z-thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('mainImg').src = el.src;
+}
+function switchTab(id, el) {
+  document.querySelectorAll('.z-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.z-tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+</script>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

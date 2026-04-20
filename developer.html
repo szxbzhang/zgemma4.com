@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Programme | ZGEMMA AI-Energy Box</title>
+<meta name="description" content="ZGEMMA is calling on Enigma2 developers to build open-source HEMS applications for the AI-Energy Box. Free hardware provided. Join the programme.">
+<link rel="stylesheet" href="style.css">
+<style>
+.zd-hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px;border-bottom:1px solid var(--border);overflow:hidden}
+.zd-hero-left{padding:5rem 3rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.zd-eyebrow{display:flex;align-items:center;gap:0.6rem;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:#34d399;margin-bottom:1.2rem}
+.zd-eyebrow::before{content:'';display:block;width:22px;height:1px;background:#34d399}
+.zd-hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:700;line-height:0.93;letter-spacing:-0.01em;margin-bottom:1.4rem}
+.zd-hero h1 em{color:#34d399;font-style:normal}
+.zd-hero h1 b{color:var(--accent2);font-weight:700}
+.zd-hero-desc{font-size:0.92rem;color:var(--muted);line-height:1.85;max-width:460px;margin-bottom:2.2rem;font-weight:300}
+.zd-hero-desc strong{color:var(--text);font-weight:500}
+.zd-hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.zd-btn-green{background:#059669;color:#fff;border:none;padding:0.85rem 2rem;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:all 0.2s;display:inline-block}
+.zd-btn-green:hover{background:#10b981;transform:translateY(-1px)}
+.zd-hero-right{background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;padding:3rem;gap:1rem;position:relative;overflow:hidden}
+.zd-hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(16,185,129,0.07),transparent 70%);pointer-events:none}
+.zd-offer-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 1.8rem;position:relative;z-index:1}
+.zd-offer-num{font-family:'Rajdhani',sans-serif;font-size:2.4rem;font-weight:700;color:#34d399;line-height:1;margin-bottom:0.25rem}
+.zd-offer-title{font-size:0.88rem;font-weight:500;margin-bottom:0.3rem}
+.zd-offer-desc{font-size:0.74rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* KNOW THE HW */
+.zd-know{background:var(--surface);border-bottom:1px solid var(--border);padding:3.5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.zd-know-title{font-family:'Rajdhani',sans-serif;font-size:1.9rem;font-weight:700;line-height:1.05;margin-bottom:1rem}
+.zd-know-title em{color:#34d399;font-style:normal}
+.zd-know-desc{font-size:0.88rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.5rem}
+.zd-know-desc strong{color:var(--text);font-weight:500}
+.zd-hw-stack{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--r);overflow:hidden}
+.zd-hw-row{background:var(--card);display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem}
+.zd-hw-icon{font-size:1.1rem;flex-shrink:0}
+.zd-hw-name{font-size:0.82rem;font-weight:500;flex:1}
+.zd-hw-detail{font-size:0.68rem;color:var(--muted)}
+.zd-hw-new{font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:#34d399;background:rgba(16,185,129,0.12);border:1px solid rgba(52,211,153,0.25);padding:2px 7px;border-radius:2px}
+
+/* APPS */
+.zd-apps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.zd-app{background:var(--card);padding:2rem;transition:background 0.2s;position:relative;overflow:hidden}
+.zd-app:hover{background:var(--card2)}
+.zd-app::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#059669;opacity:0;transition:opacity 0.2s}
+.zd-app:hover::before{opacity:1}
+.zd-app-icon{font-size:1.8rem;margin-bottom:0.9rem}
+.zd-app-protocol{display:inline-block;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:#34d399;background:rgba(16,185,129,0.1);border:1px solid rgba(52,211,153,0.2);padding:2px 7px;border-radius:2px;margin-bottom:0.7rem}
+.zd-app-title{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0.04em;margin-bottom:0.5rem}
+.zd-app-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* STEPS */
+.zd-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.zd-step{background:var(--card);padding:2rem;position:relative}
+.zd-step-num{font-family:'Rajdhani',sans-serif;font-size:3rem;font-weight:700;color:var(--dim);line-height:1;margin-bottom:0.8rem}
+.zd-step-title{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.04em;margin-bottom:0.5rem}
+.zd-step-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* HW DETAIL */
+.zd-hardware{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--border)}
+.zd-hw-left{background:var(--surface);padding:3rem;border-right:1px solid var(--border)}
+.zd-hw-right{background:var(--card);padding:3rem}
+.zd-hw-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#34d399;margin-bottom:1rem}
+.zd-hw-title{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;letter-spacing:0.03em;margin-bottom:0.5rem;line-height:1.1}
+.zd-hw-subtitle{font-size:0.82rem;color:var(--muted);margin-bottom:1.8rem;font-weight:300;line-height:1.6}
+.zd-spec-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.5rem}
+.zd-spec-item{display:grid;grid-template-columns:140px 1fr;background:var(--card)}
+.zd-spec-item:nth-child(odd){background:var(--card2)}
+.zd-spec-k{padding:0.6rem 0.9rem;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--border)}
+.zd-spec-v{padding:0.6rem 0.9rem;font-size:0.8rem}
+.zd-spec-v.green{color:#34d399}
+.zd-free-kit{background:rgba(5,150,105,0.08);border:1px solid rgba(52,211,153,0.25);border-radius:var(--r);padding:1.5rem;margin-bottom:1.5rem}
+.zd-free-kit-title{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;color:#34d399;margin-bottom:0.8rem}
+.zd-free-kit ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.zd-free-kit li{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.5}
+.zd-free-kit li::before{content:'✓';color:#34d399;font-size:0.75rem;flex-shrink:0;margin-top:2px}
+.zd-kit-note{font-size:0.68rem;color:var(--dim);margin-top:0.8rem;line-height:1.6}
+
+/* CTA + FORM */
+.zd-cta{background:linear-gradient(135deg,#041a10 0%,#050d1a 60%);border-top:1px solid rgba(5,150,105,0.3);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.zd-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(16,185,129,0.08),transparent 70%)}
+.zd-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.zd-cta h2{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.05;margin-bottom:1rem}
+.zd-cta h2 em{color:#34d399;font-style:normal}
+.zd-cta p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
+.zd-cta-note{font-size:0.72rem;color:var(--dim);margin-bottom:2rem}
+.zd-cta-note a{color:var(--muted);transition:color 0.2s}
+.zd-cta-note a:hover{color:var(--text)}
+.zd-apply{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem 2.5rem;text-align:left;margin-top:2rem}
+.zd-apply-title{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.4rem}
+.zd-apply-sub{font-size:0.78rem;color:var(--muted);margin-bottom:1.5rem;font-weight:300}
+.zd-field{margin-bottom:1rem}
+.zd-field label{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem}
+.zd-field input,.zd-field select,.zd-field textarea{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:0.65rem 0.9rem;font-family:'Inter',sans-serif;font-size:0.85rem;border-radius:var(--r);outline:none;transition:border-color 0.2s}
+.zd-field input:focus,.zd-field select:focus,.zd-field textarea:focus{border-color:#34d399}
+.zd-field textarea{resize:vertical;min-height:110px;line-height:1.6}
+.zd-field select option{background:var(--card)}
+.zd-field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.zd-submit{width:100%;background:#059669;color:#fff;border:none;padding:0.85rem;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:background 0.2s;margin-top:0.5rem}
+.zd-submit:hover{background:#10b981}
+.zd-form-note{font-size:0.68rem;color:var(--dim);margin-top:0.7rem;line-height:1.6}
+.zd-success{display:none;background:rgba(5,150,105,0.12);border:1px solid rgba(52,211,153,0.3);border-radius:var(--r);padding:1.2rem 1.5rem;margin-top:1rem}
+.zd-success p{font-size:0.85rem;color:#34d399}
+
+@media(max-width:900px){
+  .zd-hero{grid-template-columns:1fr}
+  .zd-hero-left{padding:3rem 1.5rem 2rem}
+  .zd-hero-right{padding:2rem 1.5rem}
+  .zd-know{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.5rem}
+  .zd-apps{grid-template-columns:1fr}
+  .zd-steps{grid-template-columns:1fr 1fr}
+  .zd-hardware{grid-template-columns:1fr}
+  .zd-hw-left{border-right:none;border-bottom:1px solid var(--border);padding:2rem 1.5rem}
+  .zd-hw-right{padding:2rem 1.5rem}
+  .zd-cta{padding:3.5rem 1.5rem}
+  .zd-apply{padding:1.5rem}
+  .zd-field-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){.zd-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="product-ai-energy.html">AI-Energy Box</a></li>
+    <li><a href="developer.html" class="active">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="zd-hero">
+  <div class="zd-hero-left">
+    <div class="zd-eyebrow">Open Developer Programme</div>
+    <h1>Build <em>HEMS</em><br>on Hardware<br>You <b>Already</b> Know</h1>
+    <p class="zd-hero-desc">
+      You already build images for ZGEMMA boxes. The <strong>AI-Energy Box</strong> is the same platform — Amlogic S905Y4, running OpenPLi, OpenViX or OpenATV — with one addition: a <strong>USB RS485 bridge</strong> that connects to solar inverters, EV chargers and smart meters.<br><br>
+      We need Enigma2 community developers to build open-source HEMS plugins. <strong>We will send you the hardware for free.</strong>
+    </p>
+    <div class="zd-hero-btns">
+      <a href="#apply" class="zd-btn-green">Apply for a Free Dev Kit</a>
+      <a href="#what-we-need" class="z-btn-ghost">See What We Need</a>
+    </div>
+  </div>
+  <div class="zd-hero-right">
+    <div class="zd-offer-card">
+      <div class="zd-offer-num">Free</div>
+      <div class="zd-offer-title">AI-Energy Box + USB RS485 Bridge</div>
+      <div class="zd-offer-desc">We ship the complete dev kit to your door at no cost. No strings attached beyond contributing your plugin back to the community as open-source.</div>
+    </div>
+    <div class="zd-offer-card">
+      <div class="zd-offer-num">Open</div>
+      <div class="zd-offer-title">Your Plugin, Your Credit</div>
+      <div class="zd-offer-desc">Everything you build is published on zgemma.org as a free download for the whole Enigma2 community. Full authorship credit to you.</div>
+    </div>
+    <div class="zd-offer-card">
+      <div class="zd-offer-num">Zero</div>
+      <div class="zd-offer-title">Learning Curve on the Linux Side</div>
+      <div class="zd-offer-desc">OpenPLi, OpenViX, OpenATV — you built these images. Same Python plugin framework. Same Enigma2 APIs. Just a new hardware interface to talk to.</div>
+    </div>
+  </div>
+</section>
+
+<!-- YOU KNOW THIS HW -->
+<div class="zd-know">
+  <div>
+    <div class="zd-know-title">Same Box.<br><em>New Capability.</em></div>
+    <p class="zd-know-desc">The AI-Energy Box is not a new platform to learn. It is the <strong>ZGEMMA hardware you already work with</strong>, running the same Enigma2 Linux stack you know inside out.<br><br>
+    The only addition is a <strong>USB 2.0 → RS485 bridge</strong> that exposes a standard serial interface to industrial energy devices — solar inverters, battery systems, EV chargers and smart meters using Modbus RTU, SunSpec or OCPP.<br><br>
+    Your Python skills, your plugin knowledge, your image build process — <strong>all of it transfers directly.</strong></p>
+  </div>
+  <div class="zd-hw-stack">
+    <div class="zd-hw-row"><div class="zd-hw-icon">💻</div><div class="zd-hw-name">Amlogic S905Y4</div><div class="zd-hw-detail">Same SoC family you know</div></div>
+    <div class="zd-hw-row"><div class="zd-hw-icon">🐧</div><div class="zd-hw-name">Enigma2 Linux</div><div class="zd-hw-detail">OpenPLi · OpenViX · OpenATV</div></div>
+    <div class="zd-hw-row"><div class="zd-hw-icon">🐍</div><div class="zd-hw-name">Python Plugin API</div><div class="zd-hw-detail">Same framework you already use</div></div>
+    <div class="zd-hw-row"><div class="zd-hw-icon">🌐</div><div class="zd-hw-name">WiFi + Gigabit Ethernet</div><div class="zd-hw-detail">Cloud / MQTT ready out of the box</div></div>
+    <div class="zd-hw-row" style="border-top:2px solid #059669">
+      <div class="zd-hw-icon">🔌</div><div class="zd-hw-name">USB → RS485 Bridge</div><div class="zd-hw-new">New Addition</div>
+    </div>
+    <div class="zd-hw-row" style="background:rgba(5,150,105,0.06)">
+      <div class="zd-hw-icon">⚡</div><div class="zd-hw-name">Modbus RTU · SunSpec · OCPP</div><div class="zd-hw-detail">Energy protocol access</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE NEED -->
+<section class="z-section z-section-border" id="what-we-need">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Open Source Plugins</div><div class="z-sec-title">What We Need Built</div></div>
+  </div>
+  <div class="zd-apps">
+    <div class="zd-app">
+      <div class="zd-app-icon">☀️</div>
+      <div class="zd-app-protocol">Modbus RTU · SunSpec</div>
+      <div class="zd-app-title">Solar Inverter Monitor</div>
+      <div class="zd-app-desc">Read live generation data from solar inverters via Modbus RTU or SunSpec. Display power output, daily yield and fault status as an Enigma2 plugin. Compatible with SMA, Fronius, Huawei, Growatt and other major brands.</div>
+    </div>
+    <div class="zd-app">
+      <div class="zd-app-icon">🔋</div>
+      <div class="zd-app-protocol">Modbus RTU</div>
+      <div class="zd-app-title">Battery Storage Dashboard</div>
+      <div class="zd-app-desc">Monitor home battery state-of-charge, charge/discharge rate and grid import/export via Modbus. Show real-time energy flow: solar → battery → grid → home. Supports BYD, Pylontech, LG Chem and other systems.</div>
+    </div>
+    <div class="zd-app">
+      <div class="zd-app-icon">⚡</div>
+      <div class="zd-app-protocol">OCPP 1.6J</div>
+      <div class="zd-app-title">EV Charger Controller</div>
+      <div class="zd-app-desc">Control residential EV chargers via OCPP. Start/stop charging, set charge rate, view session history and enable time-of-use scheduling — all from the TV interface via your set-top box.</div>
+    </div>
+    <div class="zd-app">
+      <div class="zd-app-icon">📊</div>
+      <div class="zd-app-protocol">All Protocols</div>
+      <div class="zd-app-title">Home Energy Overview</div>
+      <div class="zd-app-desc">A combined dashboard aggregating solar, battery, EV and grid consumption into a single Enigma2 screen. Show today's self-sufficiency rate, cost savings and carbon offset in real time.</div>
+    </div>
+    <div class="zd-app">
+      <div class="zd-app-icon">🌡️</div>
+      <div class="zd-app-protocol">Zigbee · P1/DSMR</div>
+      <div class="zd-app-title">Smart Meter Integration</div>
+      <div class="zd-app-desc">Read P1/DSMR smart meter data (Netherlands, Belgium) or Zigbee energy monitors. Display live grid consumption, peak demand and hourly usage history directly from the set-top box.</div>
+    </div>
+    <div class="zd-app">
+      <div class="zd-app-icon">🔧</div>
+      <div class="zd-app-protocol">Your Idea</div>
+      <div class="zd-app-title">Propose Your Own</div>
+      <div class="zd-app-desc">Have a different use case in mind? We are open to any HEMS-related plugin that uses the RS485 or Zigbee interface. Tell us your idea when you apply — if it makes sense for the community, we support it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">The Process</div><div class="z-sec-title">How It Works</div></div>
+  </div>
+  <div class="zd-steps">
+    <div class="zd-step">
+      <div class="zd-step-num">01</div>
+      <div class="zd-step-title">Apply Below</div>
+      <div class="zd-step-desc">Tell us your Enigma2 background, which image teams you work with, and what HEMS plugin you want to build. Takes 2 minutes.</div>
+    </div>
+    <div class="zd-step">
+      <div class="zd-step-num">02</div>
+      <div class="zd-step-title">We Ship the Kit</div>
+      <div class="zd-step-desc">We send you an AI-Energy Box with USB RS485 bridge included, shipped free to your address in Europe. No cost, no contract.</div>
+    </div>
+    <div class="zd-step">
+      <div class="zd-step-num">03</div>
+      <div class="zd-step-title">Build &amp; Test</div>
+      <div class="zd-step-desc">Develop your plugin using the Enigma2 framework you already know. We provide hardware support and protocol documentation. Build at your own pace.</div>
+    </div>
+    <div class="zd-step">
+      <div class="zd-step-num">04</div>
+      <div class="zd-step-title">Publish on zgemma.org</div>
+      <div class="zd-step-desc">Your plugin goes live on zgemma.org as a free open-source download. Full author credit to you. The whole community benefits.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE DETAIL -->
+<section class="z-section z-section-border" style="padding:0">
+  <div class="zd-hardware">
+    <div class="zd-hw-left">
+      <div class="zd-hw-label">Dev Kit · What You Receive</div>
+      <div class="zd-hw-title">AI-Energy Box<br>Developer Kit</div>
+      <div class="zd-hw-subtitle">Everything you need to start building HEMS plugins on day one. Shipped free across Europe.</div>
+      <div class="zd-free-kit">
+        <div class="zd-free-kit-title">📦 Free Dev Kit Contents</div>
+        <ul>
+          <li>ZGEMMA AI-Energy Box (Amlogic S905Y4, 2GB RAM, 16GB eMMC)</li>
+          <li>USB 2.0 → RS485 bridge adapter</li>
+          <li>HDMI cable + power adapter</li>
+          <li>Pre-installed Enigma2 image of your choice (OpenATV / OpenPLi / OpenViX)</li>
+          <li>Access to Modbus / SunSpec / OCPP technical documentation</li>
+          <li>Direct support from Zgemma hardware team via email</li>
+        </ul>
+        <div class="zd-kit-note">Shipping within Europe only. One kit per developer or team. Programme places are limited — apply early.</div>
+      </div>
+      <a href="#apply" class="zd-btn-green">Apply for Your Free Kit</a>
+    </div>
+    <div class="zd-hw-right">
+      <div class="zd-hw-label">Hardware Specification</div>
+      <div class="zd-spec-list">
+        <div class="zd-spec-item"><div class="zd-spec-k">SoC</div><div class="zd-spec-v">Amlogic S905Y4 · Quad-core Cortex-A35</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">RAM</div><div class="zd-spec-v">2GB LPDDR4</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">Storage</div><div class="zd-spec-v">16GB eMMC</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">OS</div><div class="zd-spec-v">Enigma2 Linux (OpenATV / OpenPLi / OpenViX)</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">RS485</div><div class="zd-spec-v green">USB 2.0 → RS485 bridge · included in kit</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">Protocols</div><div class="zd-spec-v green">Modbus RTU · SunSpec · OCPP · Zigbee</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">Network</div><div class="zd-spec-v">Gigabit Ethernet + WiFi 802.11ac</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">USB</div><div class="zd-spec-v">2× USB 2.0 · 1× USB 3.0</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">Video</div><div class="zd-spec-v">HDMI 2.1 · 4K output</div></div>
+        <div class="zd-spec-item"><div class="zd-spec-k">Shipping</div><div class="zd-spec-v">Free · UK · Germany · Netherlands · wider EU</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<div class="zd-cta" id="apply">
+  <div class="zd-cta-inner">
+    <h2>Ready to <em>Build</em>?</h2>
+    <p>Apply for your free AI-Energy Box developer kit below. Tell us your Enigma2 background and what you plan to build. We review applications on a rolling basis and ship kits within 2–3 weeks of approval.</p>
+    <div class="zd-cta-note">Questions? Email <a href="mailto:developer@zgemma.org">developer@zgemma.org</a></div>
+    <div class="zd-apply">
+      <div class="zd-apply-title">Developer Kit Application</div>
+      <div class="zd-apply-sub">All fields marked * are required. We respond within 5 working days.</div>
+      <form id="devForm" onsubmit="submitDev(event)">
+        <div class="zd-field-row">
+          <div class="zd-field">
+            <label>Your Name *</label>
+            <input type="text" required placeholder="Jan de Vries">
+          </div>
+          <div class="zd-field">
+            <label>Country *</label>
+            <select required>
+              <option value="">Select...</option>
+              <option>United Kingdom</option>
+              <option>Germany</option>
+              <option>Netherlands</option>
+              <option>Belgium</option>
+              <option>France</option>
+              <option>Italy</option>
+              <option>Spain</option>
+              <option>Poland</option>
+              <option>Sweden</option>
+              <option>Other EU</option>
+            </select>
+          </div>
+        </div>
+        <div class="zd-field">
+          <label>Email Address *</label>
+          <input type="email" required placeholder="your@email.com">
+        </div>
+        <div class="zd-field">
+          <label>Which Enigma2 image teams do you work with? *</label>
+          <select required>
+            <option value="">Select your primary team...</option>
+            <option>OpenPLi</option>
+            <option>OpenViX</option>
+            <option>OpenATV</option>
+            <option>OpenBH / BlackHole</option>
+            <option>OpenSPA</option>
+            <option>Multiple teams</option>
+            <option>Independent developer</option>
+          </select>
+        </div>
+        <div class="zd-field">
+          <label>Link to your Enigma2 work (GitHub, forum profile, plugin or image) *</label>
+          <input type="url" required placeholder="https://github.com/yourname">
+        </div>
+        <div class="zd-field">
+          <label>What HEMS plugin do you plan to build? *</label>
+          <textarea required placeholder="Describe the plugin — which protocol (Modbus / SunSpec / OCPP / Zigbee), which devices it connects to, and what it shows the user. More detail helps us approve faster."></textarea>
+        </div>
+        <div class="zd-field">
+          <label>Do you have energy hardware to test against?</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Yes — inverter / EV charger / battery at home or lab</option>
+            <option>Partial — I have some relevant devices</option>
+            <option>No — I will work from protocol docs and simulation</option>
+          </select>
+        </div>
+        <button type="submit" class="zd-submit">Submit Application →</button>
+        <div class="zd-form-note">By submitting you agree to publish your finished plugin as open-source software on zgemma.org. The dev kit is yours to keep regardless of outcome.</div>
+      </form>
+      <div class="zd-success" id="devSuccess">
+        <p>✓ &nbsp;Application received — thank you. We will get back to you within 5 working days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="z-partners">
+  <span class="z-partners-label">Community Partners</span>
+  <span class="z-partner">OpenATV</span><span class="z-partner">OpenPLi</span><span class="z-partner">OpenViX</span><span class="z-partner">OpenBH</span><span class="z-partner">OpenSPA</span><span class="z-partner">Pure-E2</span><span class="z-partner">EGAMI</span>
+</div>
+
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Gemma Technology (Shenzhen) Co., Ltd<br><br>Professional hardware for European markets.<br>DVB receivers · HEMS Gateways · Open Developer Programme.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul>
+      <li><a href="product-ai-energy.html" style="color:#34d399">AI-Energy Box</a></li>
+      <li><a href="product-airbox.html">AIRBOX Y1</a></li>
+      <li><a href="product-h17combo.html">H17 COMBO</a></li>
+      <li><a href="products.html">All Products</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Developers</h4><ul>
+      <li><a href="developer.html">Developer Programme</a></li>
+      <li><a href="developer.html#apply">Apply for Dev Kit</a></li>
+      <li><a href="downloads.html">Plugin Downloads</a></li>
+      <li><a href="mailto:developer@zgemma.org">developer@zgemma.org</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Company</h4><ul>
+      <li><a href="news.html">News</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology · Shenzhen, China</span>
+    <span class="z-fta-notice">Open Source · Community Driven</span>
+  </div>
+</footer>
+
+<script>
+function submitDev(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.zd-submit');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('devForm').style.display = 'none';
+    document.getElementById('devSuccess').style.display = 'block';
+  }, 800);
+}
+</script>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZGEMMA | Professional DVB Receivers for Europe</title>
+<meta name="description" content="ZGEMMA — Professional DVB hybrid set-top boxes with Enigma2 Linux. 4K UHD, built-in WiFi, FTA only. Available on Amazon EU.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO ── */
+.z-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 540px; border-bottom: 1px solid var(--border); overflow: hidden; }
+.z-hero-left { padding: 5rem 3rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.z-eyebrow { display: flex; align-items: center; gap: 0.6rem; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent3); margin-bottom: 1.2rem; }
+.z-eyebrow::before { content:''; display:block; width:22px; height:1px; background:var(--accent3); }
+.z-hero h1 { font-family:'Rajdhani',sans-serif; font-size:clamp(3rem,5vw,5rem); font-weight:700; line-height:0.93; letter-spacing:-0.01em; margin-bottom:1.5rem; }
+.z-hero h1 em { color:var(--accent2); font-style:normal; }
+.z-hero-desc { color:var(--muted); font-size:0.92rem; line-height:1.75; max-width:440px; margin-bottom:2.4rem; font-weight:300; }
+.z-hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+.z-hero-right { background:var(--surface); border-left:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:3rem; position:relative; overflow:hidden; }
+.z-hero-right::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 50%,rgba(37,99,235,0.1),transparent 70%); }
+.z-hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(37,99,235,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.04) 1px,transparent 1px); background-size:40px 40px; }
+.z-hero-img { width:100%; max-width:400px; object-fit:contain; filter:drop-shadow(0 24px 64px rgba(37,99,235,0.35)); position:relative; z-index:1; }
+.z-hero-badge { position:absolute; top:1.5rem; left:1.5rem; background:rgba(37,99,235,0.18); border:1px solid rgba(96,165,250,0.3); padding:0.35rem 0.9rem; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent3); border-radius:var(--r); z-index:2; }
+
+/* ── PRODUCT GRID ── */
+.z-pgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+.z-pcard { background:var(--card); cursor:pointer; transition:background 0.2s; position:relative; overflow:hidden; display:block; color:inherit; }
+.z-pcard:hover { background:var(--card2); }
+.z-pcard.featured { grid-column:span 2; }
+.z-pcard-img { width:100%; height:220px; object-fit:contain; background:var(--surface); padding:2rem; border-bottom:1px solid var(--border); transition:transform 0.3s; }
+.z-pcard:hover .z-pcard-img { transform:scale(1.02); }
+.z-pcard-img.sm { height:170px; padding:1.5rem; }
+.z-pcard-body { padding:1.6rem; }
+.z-pname { font-family:'Rajdhani',sans-serif; font-size:1.35rem; font-weight:700; letter-spacing:0.04em; margin-bottom:0.5rem; }
+.z-pdesc { font-size:0.8rem; color:var(--muted); line-height:1.65; font-weight:300; margin-bottom:1rem; }
+.z-ptags { display:flex; flex-wrap:wrap; gap:0.35rem; }
+.z-ptag { font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--border); padding:2px 7px; border-radius:2px; }
+.z-parrow { position:absolute; bottom:1.2rem; right:1.2rem; width:28px; height:28px; border:1px solid var(--dim); display:flex; align-items:center; justify-content:center; font-size:0.9rem; color:var(--dim); border-radius:2px; transition:all 0.2s; }
+.z-pcard:hover .z-parrow { border-color:var(--accent2); color:var(--accent2); }
+
+/* ── DETAIL ── */
+.z-detail { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:4rem 3rem; }
+.z-detail-imgwrap { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:2.5rem; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; min-height:300px; }
+.z-detail-imgwrap::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center,rgba(37,99,235,0.1),transparent 70%); }
+.z-detail-img { max-width:320px; width:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(37,99,235,0.3)); position:relative; z-index:1; }
+.z-detail-label { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent3); margin-bottom:1.2rem; }
+.z-detail-title { font-family:'Rajdhani',sans-serif; font-size:2.2rem; font-weight:700; letter-spacing:0.03em; line-height:1; margin-bottom:0.5rem; }
+.z-detail-sub { font-size:0.82rem; color:var(--muted); margin-bottom:1.8rem; font-weight:300; line-height:1.6; }
+.z-spec-table { width:100%; border-collapse:collapse; margin-bottom:2rem; }
+.z-spec-table tr { border-bottom:1px solid var(--border); }
+.z-spec-table td { padding:0.65rem 0; font-size:0.82rem; vertical-align:top; }
+.z-spec-table td:first-child { color:var(--muted); width:40%; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; padding-right:1rem; }
+.z-detail-cta { display:flex; gap:0.8rem; flex-wrap:wrap; }
+.z-dcta1 { background:var(--accent); color:#fff; border:none; padding:0.65rem 1.5rem; font-family:'Inter',sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; border-radius:var(--r); letter-spacing:0.04em; transition:background 0.2s; }
+.z-dcta1:hover { background:var(--accent2); }
+.z-dcta2 { background:transparent; color:var(--text); border:1px solid var(--border); padding:0.65rem 1.5rem; font-family:'Inter',sans-serif; font-size:0.8rem; cursor:pointer; border-radius:var(--r); letter-spacing:0.04em; transition:border-color 0.2s; }
+.z-dcta2:hover { border-color:var(--muted); }
+
+/* ── RETAIL ── */
+.z-retail-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); }
+.z-rcard { background:var(--card); padding:1.8rem 2rem; transition:background 0.2s; display:block; }
+.z-rcard:hover { background:var(--card2); }
+.z-rflag { font-size:1.8rem; margin-bottom:0.7rem; }
+.z-rcountry { font-family:'Rajdhani',sans-serif; font-size:1.05rem; font-weight:600; letter-spacing:0.04em; margin-bottom:0.2rem; }
+.z-rurl { font-size:0.72rem; color:var(--accent3); }
+
+/* ── NEWS ── */
+.z-news-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); }
+.z-ncard { background:var(--card); padding:1.6rem 1.8rem; transition:background 0.2s; display:block; }
+.z-ncard:hover { background:var(--card2); }
+.z-ndate { font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+.z-ntitle { font-size:0.9rem; line-height:1.55; }
+
+@media (max-width:900px) {
+  .z-hero { grid-template-columns:1fr; }
+  .z-hero-right { min-height:280px; }
+  .z-pgrid { grid-template-columns:1fr 1fr; }
+  .z-pcard.featured { grid-column:span 2; }
+  .z-detail { grid-template-columns:1fr; gap:2rem; padding:2.5rem 1.5rem; }
+  .z-retail-grid { grid-template-columns:repeat(2,1fr); }
+  .z-news-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .z-pgrid { grid-template-columns:1fr; }
+  .z-pcard.featured { grid-column:span 1; }
+  .z-retail-grid { grid-template-columns:repeat(2,1fr); }
+  .z-hero-left { padding:3rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="snipcart-checkout z-cart-btn">Cart <span class="snipcart-items-count"></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="z-hero">
+  <div class="z-hero-left">
+    <div class="z-eyebrow">Enigma2 · Linux · DVB Hybrid · FTA</div>
+    <h1>European<br><em>Set-Top</em><br>Receivers</h1>
+    <p class="z-hero-desc">Professional DVB hybrid receivers engineered for European broadcast standards. Open-source Enigma2 Linux platform, 4K UHD output, built-in WiFi — strictly Free-to-Air.</p>
+    <div class="z-hero-btns">
+      <a href="products.html" class="z-btn-primary">Explore Products</a>
+      <a href="downloads.html" class="z-btn-ghost">Downloads &amp; Firmware</a>
+    </div>
+  </div>
+  <div class="z-hero-right">
+    <div class="z-hero-grid"></div>
+    <div class="z-hero-badge">★ New 2024 — AIRBOX Y1</div>
+    <img class="z-hero-img"
+      src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/airbox-y1.jpg"
+      onerror="this.src='https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg'"
+      alt="Zgemma AIRBOX Y1">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="z-stats">
+  <div class="z-stat"><div class="z-stat-num">4K</div><div class="z-stat-label">Ultra HD Output</div></div>
+  <div class="z-stat"><div class="z-stat-num">30+</div><div class="z-stat-label">Product Models</div></div>
+  <div class="z-stat"><div class="z-stat-num">10yr</div><div class="z-stat-label">Since 2014</div></div>
+  <div class="z-stat"><div class="z-stat-num">5 EU</div><div class="z-stat-label">Amazon Stores</div></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Hardware Lineup</div><div class="z-sec-title">Latest Products</div></div>
+    <a href="products.html" class="z-see-all">View All Products →</a>
+  </div>
+  <div class="z-pgrid">
+    <a href="product-h17combo.html" class="z-pcard featured">
+      <img class="z-pcard-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="ZGEMMA H17 COMBO">
+      <div class="z-pcard-body">
+        <span class="z-badge">Flagship 2024</span>
+        <div class="z-pname">ZGEMMA H17 COMBO</div>
+        <div class="z-pdesc">4K UHD hybrid receiver with DVB-S2X + DVB-C/T2. Enigma2 Linux, 16GB eMMC, 1GB DDR3, built-in WiFi, CI+, USB 3.0 and Gigabit Ethernet.</div>
+        <div class="z-ptags"><span class="z-ptag">S2X+T2/C</span><span class="z-ptag">4K UHD</span><span class="z-ptag">CI+</span><span class="z-ptag">WiFi</span><span class="z-ptag">Enigma2</span><span class="z-ptag">16GB Flash</span></div>
+        <div class="z-parrow">→</div>
+      </div>
+    </a>
+    <a href="product-h17twin.html" class="z-pcard">
+      <img class="z-pcard-img sm" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="ZGEMMA H17 TWIN">
+      <div class="z-pcard-body">
+        <span class="z-badge">New 2024</span>
+        <div class="z-pname">H17 TWIN</div>
+        <div class="z-pdesc">Dual DVB-S2X satellite tuner, 4K UHD, Enigma2 Linux.</div>
+        <div class="z-ptags"><span class="z-ptag">S2X+S2X</span><span class="z-ptag">4K</span><span class="z-ptag">CI+</span></div>
+        <div class="z-parrow">→</div>
+      </div>
+    </a>
+    <a href="product-airbox.html" class="z-pcard">
+      <img class="z-pcard-img sm" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="AIRBOX Y1">
+      <div class="z-pcard-body">
+        <span class="z-badge">Android TV</span>
+        <div class="z-pname">AIRBOX Y1</div>
+        <div class="z-pdesc">Android TV box with 4K HDR, Google Assistant, Chromecast.</div>
+        <div class="z-ptags"><span class="z-ptag">Android</span><span class="z-ptag">4K HDR</span><span class="z-ptag">Google TV</span></div>
+        <div class="z-parrow">→</div>
+      </div>
+    </a>
+    <a href="product-h9combo.html" class="z-pcard">
+      <img class="z-pcard-img sm" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H9 COMBO">
+      <div class="z-pcard-body">
+        <span class="z-badge">Best Seller</span>
+        <div class="z-pname">H9 COMBO</div>
+        <div class="z-pdesc">S2X + T2/C 4K UHD, 300MHz WiFi, 8GB EMMC flash.</div>
+        <div class="z-ptags"><span class="z-ptag">S2X+T2/C</span><span class="z-ptag">CA</span><span class="z-ptag">SATA</span></div>
+        <div class="z-parrow">→</div>
+      </div>
+    </a>
+    <a href="products.html" class="z-pcard">
+      <img class="z-pcard-img sm" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="H8.2H PLUS">
+      <div class="z-pcard-body">
+        <span class="z-badge">Popular</span>
+        <div class="z-pname">H8.2H PLUS</div>
+        <div class="z-pdesc">Enhanced dual DVB-S2 + DVB-T2/C hybrid receiver.</div>
+        <div class="z-ptags"><span class="z-ptag">S2+T2/C</span><span class="z-ptag">SATA</span><span class="z-ptag">USB</span></div>
+        <div class="z-parrow">→</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- DETAIL SPOTLIGHT -->
+<div class="z-detail">
+  <div>
+    <div class="z-detail-label">Featured Specification · ZGEMMA H17 COMBO</div>
+    <div class="z-detail-imgwrap">
+      <img class="z-detail-img" src="https://zgemma.org/uploads/3/4/8/7/34872893/editor/h17combo.jpg" alt="ZGEMMA H17 COMBO">
+    </div>
+  </div>
+  <div>
+    <div class="z-detail-title">ZGEMMA H17 COMBO</div>
+    <div class="z-detail-sub">4K UHD Hybrid Receiver · Enigma2 Linux · DVB-S2X + DVB-C/T2</div>
+    <table class="z-spec-table">
+      <tr><td>Chipset</td><td>Broadcom BCM7251S</td></tr>
+      <tr><td>CPU</td><td>12,000 DMIPS Dual Core</td></tr>
+      <tr><td>Memory</td><td>1GB DDR3 · 16GB eMMC Flash</td></tr>
+      <tr><td>Tuner</td><td>1× DVB-S2X + 1× DVB-C/T2</td></tr>
+      <tr><td>Resolution</td><td>4K UHD 3840×2160</td></tr>
+      <tr><td>OS</td><td>Enigma2 Linux (openATV / openPLi / openViX)</td></tr>
+      <tr><td>Wireless</td><td>Built-in 300MHz WiFi</td></tr>
+      <tr><td>Network</td><td>1× Gigabit Ethernet</td></tr>
+      <tr><td>CI Slot</td><td>1× Common Interface CI+ 1.3</td></tr>
+      <tr><td>USB</td><td>1× USB 3.0 + 1× USB 2.0</td></tr>
+      <tr><td>Video Out</td><td>HDMI 2.0 (4K HDR)</td></tr>
+      <tr><td>Streaming</td><td>YouTube · Kodi · Stalker · IPTV</td></tr>
+      <tr><td>Certifications</td><td>CE · RoHS</td></tr>
+    </table>
+    <div class="z-detail-cta">
+      <a href="https://www.amazon.de/stores/ZGEMMA/page/BFFD4BCB-DE1E-40EE-87D9-837C376D360B" target="_blank" class="z-dcta1">Buy on Amazon</a>
+      <a href="downloads.html" class="z-dcta2">Download Firmware</a>
+      <a href="product-h17combo.html" class="z-dcta2">Full Details</a>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="z-partners">
+  <span class="z-partners-label">Software Partners</span>
+  <span class="z-partner">OpenATV</span><span class="z-partner">OpenPLi</span><span class="z-partner">OpenViX</span><span class="z-partner">OpenBH</span><span class="z-partner">OpenSPA</span><span class="z-partner">Pure-E2</span><span class="z-partner">EGAMI</span>
+</div>
+
+<!-- AMAZON RETAIL -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Official Retail Channels</div><div class="z-sec-title">Buy on Amazon EU</div></div>
+  </div>
+  <div class="z-retail-grid">
+    <a class="z-rcard" href="https://www.amazon.it/zgemma" target="_blank"><div class="z-rflag">🇮🇹</div><div class="z-rcountry">Italy</div><div class="z-rurl">amazon.it/zgemma</div></a>
+    <a class="z-rcard" href="https://www.amazon.de/zgemma" target="_blank"><div class="z-rflag">🇩🇪</div><div class="z-rcountry">Germany</div><div class="z-rurl">amazon.de/zgemma</div></a>
+    <a class="z-rcard" href="https://www.amazon.fr/zgemma" target="_blank"><div class="z-rflag">🇫🇷</div><div class="z-rcountry">France</div><div class="z-rurl">amazon.fr/zgemma</div></a>
+    <a class="z-rcard" href="https://www.amazon.es/zgemma" target="_blank"><div class="z-rflag">🇪🇸</div><div class="z-rcountry">Spain</div><div class="z-rurl">amazon.es/zgemma</div></a>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div><div class="z-sec-label">Latest Updates</div><div class="z-sec-title">News</div></div>
+    <a href="news.html" class="z-see-all">All News →</a>
+  </div>
+  <div class="z-news-grid">
+    <a href="news.html" class="z-ncard"><div class="z-ndate">Dec 10, 2024</div><div class="z-ntitle">ZGEMMA AIRBOX Y1 — New Android TV product now available</div></a>
+    <a href="news.html" class="z-ncard"><div class="z-ndate">May 18, 2022</div><div class="z-ntitle">New releases: H9TWIN SE, H11S, H8.2H now online</div></a>
+    <div class="z-ncard"><div class="z-ndate">Nov 1, 2019</div><div class="z-ntitle">H10 Series launched with Linux + Android dual system</div></div>
+    <div class="z-ncard"><div class="z-ndate">Jan 23, 2019</div><div class="z-ntitle">H9 Combo: S2X + T2/C 4K UHD with CI+ and 300MHz WiFi released</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span style="color:var(--accent2)">GEMMA</span></a>
+      <p>Shenzhen Air Digital Technology Co., Ltd<br>Gemma Technology (Shenzhen) Co., Ltd<br><br>Professional DVB hardware for European broadcast markets. Established 2014.<br><br>
+      <span style="color:var(--accent3)">Alibaba:</span> airsat.en.alibaba.com<br>
+      <span style="color:var(--accent3)">AliExpress:</span> zgemmashop.aliexpress.com</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul>
+      <li><a href="product-ai-energy.html" style="color:#34d399">AI-Energy Box ↗</a></li>
+      <li><a href="product-airbox.html">AIRBOX Y1</a></li>
+      <li><a href="product-h17combo.html">H17 COMBO</a></li>
+      <li><a href="products.html">All DVB Products</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Company</h4><ul>
+      <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="developer.html">Developers</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="developer.html">Developers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul>
+      <li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba Store</a></li>
+      <li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li>
+      <li><a href="https://www.amazon.de/stores/ZGEMMA/page/BFFD4BCB-DE1E-40EE-87D9-837C376D360B" target="_blank">Amazon EU</a></li>
+      <li><a href="contact.html">Wholesale Enquiry</a></li>
+    </ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology · Shenzhen, China</span>
+    <span class="z-fta-notice">Strictly FTA hardware only — no patches or modifications supplied</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+<script>
+  window.SnipcartSettings = {
+    publicApiKey: 'Y2I3MTI3ZTgtNDk0ZS00NWRjLWJlMmEtMDlhODI1NjczNWE0NjM5MTE5OTQ4MTQ0NzkyNzU3',
+    loadStrategy: 'on-user-interaction',
+    currency: 'eur',
+  };
+  (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version='3.0');var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain='cdn.snipcart.com');var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol='https');var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=true);var y=window.SnipcartSettings.version.includes('v3.0.0-ci')||window.SnipcartSettings.version!='3.0'&&window.SnipcartSettings.version.localeCompare('3.4.0',void 0,{numeric:true,sensitivity:'base'})===-1,f=['focus','mouseover','touchmove','scroll','keydown'];window.LoadSnipcart=o;document.readyState==='loading'?document.addEventListener('DOMContentLoaded',r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==='on-user-interaction'&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=false;function o(){if(a)return;a=true;let t=document.getElementsByTagName('head')[0],n=document.querySelector('#snipcart'),i=document.querySelector('src[src^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][src$="snipcart.js"]'),e=document.querySelector('link[href^="'+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'"][href$="snipcart.css"]');n||(n=document.createElement('div'),n.id='snipcart',n.setAttribute('hidden','true'),document.body.appendChild(n)),h(n),i||(i=document.createElement('script'),i.src=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.js',i.async=true,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement('link'),e.rel='stylesheet',e.type='text/css',e.href=''+window.SnipcartSettings.protocol+'://'+window.SnipcartSettings.domain+'/themes/v'+window.SnipcartSettings.version+'/default/snipcart.css',t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency))}})();
+</script>
+</body>
+</html>
