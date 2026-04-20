@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEMS — Home Energy Management System | ZGEMMA</title>
+<meta name="description" content="Free open-source Enigma2 plugin to monitor solar, battery, grid, EV charger and heat pump on your TV. 30+ brand drivers, 100% local processing.">
+<meta name="keywords" content="HEMS, home energy management system, Enigma2 plugin, solar monitoring, battery storage, grid management, EV charger, heat pump, energy optimization, B2B energy management, smart energy, demand response, energy analytics, distributed energy resources, building energy management">
+<link rel="canonical" href="https://www.zgemma4.com/hems/">
+<meta property="og:title" content="HEMS — Home Energy Management System | ZGEMMA">
+<meta property="og:description" content="Free open-source Enigma2 plugin to monitor solar, battery, grid, EV charger and heat pump on your TV. 30+ brand drivers, 100% local processing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.zgemma4.com/hems/">
+<meta property="og:site_name" content="ZGEMMA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HEMS — Home Energy Management System | ZGEMMA">
+<meta name="twitter:description" content="Free open-source Enigma2 plugin to monitor solar, battery, grid, EV charger and heat pump on your TV. 30+ brand drivers, 100% local processing.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ZGEMMA HEMS",
+  "applicationCategory": "EnergyManagement",
+  "operatingSystem": "Enigma2 Linux",
+  "description": "Free open-source Enigma2 plugin to monitor solar, battery, grid, EV charger and heat pump on your TV. 30+ brand drivers, 100% local processing.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --green: #34d399;
+  --green2: #10b981;
+  --green3: #059669;
+  --green-glow: rgba(52,211,153,0.12);
+  --green-bg: rgba(52,211,153,0.08);
+}
+
+/* Hero */
+.hems-hero {
+  padding: 5rem 3rem 4rem;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hems-hero::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(52,211,153,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hems-hero-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green3);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hems-hero-eyebrow::before { content:''; display:block; width:20px; height:1px; background:var(--green3); }
+.hems-hero h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  max-width: 700px;
+}
+.hems-hero h1 span { color: var(--green2); }
+.hems-hero-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+.hems-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hems-btn-green {
+  background: var(--green2);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--r);
+  transition: all 0.2s;
+  display: inline-block;
+}
+.hems-btn-green:hover { background: var(--green3); transform: translateY(-1px); }
+
+/* Stats override green */
+.hems-stats .z-stat-num { color: var(--green3); }
+
+/* Features grid */
+.hems-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.hems-fcard {
+  background: var(--bg);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+.hems-fcard:hover { background: var(--green-bg); }
+.hems-fcard-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.hems-fcard h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.hems-fcard p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Brands */
+.hems-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.hems-brand-group {
+  background: var(--bg);
+  padding: 1.8rem 2rem;
+}
+.hems-brand-group h4 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green3);
+  margin-bottom: 0.8rem;
+}
+.hems-brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.hems-brand-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: var(--surface);
+}
+
+/* Steps */
+.hems-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.hems-step {
+  background: var(--bg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.hems-step-num {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+.hems-step h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.hems-step p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.hems-step code {
+  font-size: 0.72rem;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  font-family: monospace;
+}
+
+/* Download */
+.hems-download {
+  text-align: center;
+  padding: 4rem 3rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.hems-download h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.hems-download p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.hems-download-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Badge green variant */
+.z-badge-green {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green3);
+  background: var(--green-bg);
+  border: 1px solid rgba(52,211,153,0.25);
+  padding: 2px 9px;
+  border-radius: 2px;
+  margin-bottom: 0.9rem;
+}
+
+@media(max-width:900px){
+  .hems-hero { padding: 3rem 1.5rem; }
+  .hems-features { grid-template-columns: repeat(2,1fr); }
+  .hems-steps { grid-template-columns: 1fr; }
+}
+@media(max-width:600px){
+  .hems-features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="z-nav">
+  <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+  <ul class="z-navlinks">
+    <li><a href="products.html">Products</a></li>
+    <li><a href="./" class="active">HEMS</a></li>
+    <li><a href="developer.html">Developers</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hems-hero">
+  <div class="hems-hero-eyebrow">Enigma2 Plugin · Open Source</div>
+  <h1>Your Energy, <span>Your TV,</span> Your Control</h1>
+  <p class="hems-hero-desc">HEMS turns your ZGEMMA receiver into a home energy management hub. Monitor solar production, battery storage, grid usage, EV charging and heat pumps — all on your TV screen. 100% local, zero cloud.</p>
+  <div class="hems-hero-actions">
+    <a href="#download" class="hems-btn-green">Download Free Plugin</a>
+    <a href="https://github.com/schznbzd/hems" target="_blank" class="z-btn-ghost">View on GitHub →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="z-stats hems-stats">
+  <div class="z-stat">
+    <div class="z-stat-num">7</div>
+    <div class="z-stat-label">Device Types</div>
+  </div>
+  <div class="z-stat">
+    <div class="z-stat-num">30+</div>
+    <div class="z-stat-label">Brand Drivers</div>
+  </div>
+  <div class="z-stat">
+    <div class="z-stat-num">100%</div>
+    <div class="z-stat-label">Local Processing</div>
+  </div>
+  <div class="z-stat">
+    <div class="z-stat-num">FREE</div>
+    <div class="z-stat-label">Open Source</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="z-section">
+  <div class="z-sec-head">
+    <div>
+      <div class="z-sec-label" style="color:var(--green3)">Capabilities</div>
+      <div class="z-sec-title">What HEMS Does</div>
+    </div>
+  </div>
+  <div class="hems-features">
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">📊</div>
+      <h3>Real-time Dashboard</h3>
+      <p>Live energy flow visualization on your TV — solar generation, battery state, grid import/export and household consumption updated every few seconds.</p>
+    </div>
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">🔌</div>
+      <h3>Multi-brand Support</h3>
+      <p>Over 30 brand drivers included. Mix and match solar inverters, batteries, smart plugs and meters from different manufacturers in one unified view.</p>
+    </div>
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">⚡</div>
+      <h3>Smart Automation</h3>
+      <p>Create rules to automate devices based on energy conditions. Turn on a smart plug when solar excess exceeds 1 kW, or start your dishwasher at peak production.</p>
+    </div>
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">🔋</div>
+      <h3>Battery Management</h3>
+      <p>Track state of charge, charge/discharge rates and health metrics for Tesla Powerwall, BYD, Pylontech, Sonnen and other home battery systems.</p>
+    </div>
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">🚗</div>
+      <h3>EV Smart Charging</h3>
+      <p>Solar-surplus EV charging integration with go-e, OpenEVSE and Wallbox chargers. Charge your car with free solar energy automatically.</p>
+    </div>
+    <div class="hems-fcard">
+      <div class="hems-fcard-icon">🌡️</div>
+      <h3>Heat Pump Control</h3>
+      <p>Monitor and optimize heat pump operation with Daikin and MELCloud (Mitsubishi) integration. Schedule heating around cheap energy or solar surplus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPATIBLE BRANDS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div>
+      <div class="z-sec-label" style="color:var(--green3)">Compatibility</div>
+      <div class="z-sec-title">Supported Brands &amp; Protocols</div>
+    </div>
+  </div>
+  <div class="hems-brands-grid">
+    <div class="hems-brand-group">
+      <h4>☀️ Solar Inverters</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">Huawei</span>
+        <span class="hems-brand-tag">Fronius</span>
+        <span class="hems-brand-tag">SMA</span>
+        <span class="hems-brand-tag">Growatt</span>
+        <span class="hems-brand-tag">GoodWe</span>
+        <span class="hems-brand-tag">Solis</span>
+      </div>
+    </div>
+    <div class="hems-brand-group">
+      <h4>🔋 Battery Storage</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">Tesla Powerwall</span>
+        <span class="hems-brand-tag">Sonnen</span>
+        <span class="hems-brand-tag">BYD</span>
+        <span class="hems-brand-tag">Pylontech</span>
+      </div>
+    </div>
+    <div class="hems-brand-group">
+      <h4>🔌 Smart Plugs &amp; Meters</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">Shelly</span>
+        <span class="hems-brand-tag">Tasmota</span>
+        <span class="hems-brand-tag">myStrom</span>
+      </div>
+    </div>
+    <div class="hems-brand-group">
+      <h4>🚗 EV Chargers</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">go-e</span>
+        <span class="hems-brand-tag">OpenEVSE</span>
+        <span class="hems-brand-tag">Wallbox</span>
+      </div>
+    </div>
+    <div class="hems-brand-group">
+      <h4>🌡️ Heat Pumps</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">Daikin</span>
+        <span class="hems-brand-tag">MELCloud (Mitsubishi)</span>
+      </div>
+    </div>
+    <div class="hems-brand-group">
+      <h4>🏠 Protocols</h4>
+      <div class="hems-brand-list">
+        <span class="hems-brand-tag">Matter</span>
+        <span class="hems-brand-tag">Modbus TCP</span>
+        <span class="hems-brand-tag">HTTP/REST</span>
+        <span class="hems-brand-tag">MQTT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="z-section z-section-border">
+  <div class="z-sec-head">
+    <div>
+      <div class="z-sec-label" style="color:var(--green3)">Setup</div>
+      <div class="z-sec-title">Three Steps to Energy Insight</div>
+    </div>
+  </div>
+  <div class="hems-steps">
+    <div class="hems-step">
+      <div class="hems-step-num">01</div>
+      <h3>Install the Plugin</h3>
+      <p>Transfer the <code>.ipk</code> file to your ZGEMMA box and install via the Enigma2 package manager or command line.</p>
+    </div>
+    <div class="hems-step">
+      <div class="hems-step-num">02</div>
+      <h3>Configure Your Devices</h3>
+      <p>Edit <code>devices.json</code> to add your inverter, battery, smart plugs and other devices with their local IP addresses.</p>
+    </div>
+    <div class="hems-step">
+      <div class="hems-step-num">03</div>
+      <h3>View on Your TV</h3>
+      <p>Launch HEMS from the Enigma2 plugin menu and see your complete energy flow dashboard in real time on your TV screen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="hems-download" id="download">
+  <span class="z-badge-green">Free &amp; Open Source</span>
+  <h2>Get HEMS for Your ZGEMMA</h2>
+  <p>Works on all ZGEMMA Enigma2 receivers. No subscription, no cloud account, no tracking. Just install and go.</p>
+  <div class="hems-download-actions">
+    <a href="release" class="hems-btn-green">Download Latest IPK</a>
+    <a href="https://github.com/schznbzd/hems" target="_blank" class="z-btn-ghost">GitHub Repository →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="z-footer">
+  <div class="z-footer-top">
+    <div class="z-fbrand">
+      <a href="index.html" class="z-logo">Z<span>GEMMA</span></a>
+      <p>Professional DVB receivers powered by Enigma2 Linux. Designed in the UK, built for enthusiasts worldwide.</p>
+    </div>
+    <div class="z-flinks"><h4>Products</h4><ul><li><a href="products.html">All Products</a></li><li><a href="./">HEMS Plugin</a></li><li><a href="downloads.html">Downloads</a></li></ul></div>
+    <div class="z-flinks"><h4>Support</h4><ul><li><a href="developer.html">Developers</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="z-flinks"><h4>Trade</h4><ul><li><a href="https://airsat.en.alibaba.com" target="_blank">Alibaba</a></li><li><a href="http://zgemmashop.aliexpress.com" target="_blank">AliExpress</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+  </div>
+  <div class="z-footer-bottom">
+    <span>© 2024 Zgemma · Air Digital Technology</span>
+    <span class="z-fta-notice">Strictly FTA hardware only</span>
+    <span>CE · RoHS Certified</span>
+  </div>
+</footer>
+
+</body>
+</html>
